@@ -19,8 +19,11 @@
 # Move rotated logs to github/logs folder at 12:04 AM
 4 0 * * * cp /db1/myserver/mariadb/logs/*-$(date -d "yesterday" +\%F).log /db1/myserver/github/logs/
 
-# Push logs to github at 12:05 AM
-5 0 * * * cd /db1/myserver/github && git add --ignore-removal logs/ && git commit -m "Auto-update logs: $(date '+\%Y-\%m-\%d \%H:\%M:\%S')" && git push origin main
+# Mask all the ips in the logs here at 12:05 AM
+5 0 * * * /db1/myserver/github/scripts/auto-push-logs.sh >> /db1/myserver/github/logs/push-cron.log 2>&1
 
-# Delete all logs in github/logs folder after push at 12:10 AM
-10 0 * * * rm -f /db1/myserver/github/logs/*.log
+# Push logs to github at 12:10 AM
+10 0 * * * cd /db1/myserver/github && git add --ignore-removal logs/ && git commit -m "Auto-update logs: $(date '+\%Y-\%m-\%d \%H:\%M:\%S')" && git push origin main
+
+# Delete all logs in github/logs folder after push at 12:15 AM
+15 0 * * * rm -f /db1/myserver/github/logs/*.log
