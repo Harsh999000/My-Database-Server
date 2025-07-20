@@ -30,14 +30,14 @@ To manually build a robust and transparent database logging system using:
 ## Directory Structure – `/location/`
 myserver/
 ├── mariadb/ # Extracted MariaDB binaries
-├── mysql/ # MariaDB data files
-├── logs/ # Runtime logs (general, error, startup)
-└── github/ # Git-tracked project folder
-  ├── config/ # Configuration files (e.g., my.cnf)
-  ├── cron/ # Cron scripts like auto-push-logs.sh
-  ├── logs/ # Daily copied logs pushed to GitHub
-  ├── scripts/ # Service control scripts
-  └── docs/ # Architecture & system design docs
+ ├── mysql/ # MariaDB data files
+ ├── logs/ # Runtime logs (general, error, startup)
+ └── github/ # Git-tracked project folder
+├── config/ # Configuration files (e.g., my.cnf)
+ ├── cron/ # Cron scripts like auto-push-logs.sh
+ ├── logs/ # Daily copied logs pushed to GitHub
+ ├── scripts/ # Service control scripts
+ └── docs/ # Architecture & system design docs
 
 ---
 
@@ -76,10 +76,10 @@ myserver/
 
 ## Workflow Summary
 
-1. You manually start the MariaDB server using `start-mariadb.sh`
+1. Initially you manually start the MariaDB server using `start-mariadb.sh`
 2. The script writes a `startup-YYYY-MM-DD.log`
 3. MariaDB itself writes `general.log` and `error.log`
-4. At 2 AM the next day, cron:
+4. From 12 AM the next day, cron does the below tasks:
    - Copies all logs from yesterday
    - Renames if needed
    - Commits and pushes to GitHub
