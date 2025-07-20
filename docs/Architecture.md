@@ -69,7 +69,8 @@ myserver/
 | 12:03 AM | Flush logs so that mariadb can open the new files  |
 | 12:03 AM | Keep only last 7 days of logs in MariaDB           |
 | 12:04 AM | Move rotated logs to github folder                 |
-| 12:05 AM | Push logs to githubv                               |
+| 12:05 AM | Mask all the ip address in the logs                |
+| 12:10 AM | Push all the logs to github                        |
 | 12:10 AM | Delete all logs in github after push at 12:10 AM   |
 
 ---
@@ -82,6 +83,7 @@ myserver/
 4. From 12 AM the next day, cron does the below tasks:
    - Copies all logs from yesterday
    - Renames if needed
+   - Mask all the ip address in the logs
    - Commits and pushes to GitHub
 
 ---
