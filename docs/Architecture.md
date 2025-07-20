@@ -71,7 +71,7 @@ myserver/
 | 12:04 AM | Move rotated logs to github folder                 |
 | 12:05 AM | Mask all the ip address in the logs                |
 | 12:10 AM | Push all the logs to github                        |
-| 12:10 AM | Delete all logs in github after push at 12:10 AM   |
+| 12:15 AM | Delete all logs in github after push at 12:15 AM   |
 
 ---
 
