@@ -27,3 +27,7 @@
 
 # Delete all logs in github/logs folder after push at 12:15 AM
 15 0 * * * rm -f /location/github/logs/*.log
+
+# Create Database backup at 12:20 AM
+30 1 * * * /location/mariadb/Custom-Scripts/backup-mariadb.sh >> /location/mariadb/logs/backup.log 2>&1
+
