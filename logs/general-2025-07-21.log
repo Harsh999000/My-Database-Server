@@ -1,0 +1,152 @@
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port: 3306  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+		     4 Quit	
+250721  0:33:56	     3 Quit	
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port: 3306  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+250721  1:59:47	     5 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		     5 Query	SELECT @@tx_isolation
+		     5 Query	SELECT username, password_hash, role FROM mydbmanager_user.user_details WHERE username = 'root'
+		     6 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  1:59:48	     7 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		     8 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		     9 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    10 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    11 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    12 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    13 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    14 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  1:59:57	     5 Query	SELECT username, password_hash, role FROM mydbmanager_user.user_details WHERE username = 'harsh'
+250721  2:29:03	     6 Quit	
+		    15 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:29:05	     8 Quit	
+		    16 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:29:06	    10 Quit	
+		    17 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:29:11	    13 Quit	
+		    18 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:29:13	     5 Quit	
+		    19 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:29:18	    14 Quit	
+		    20 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:29:27	     9 Quit	
+		    21 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:29:36	    11 Quit	
+		    22 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:29:37	    12 Quit	
+		    23 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:29:46	     7 Quit	
+		    24 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:58:34	    18 Quit	
+		    25 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:58:39	    17 Quit	
+		    26 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:58:53	    20 Quit	
+		    27 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:58:56	    16 Quit	
+		    28 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:58:58	    15 Quit	
+		    29 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:59:03	    24 Quit	
+		    30 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    21 Quit	
+		    31 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:59:06	    22 Quit	
+		    32 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:59:10	    19 Quit	
+		    33 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  2:59:23	    23 Quit	
+		    34 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250721  3:22:37	    35 Connect	harsh@localhost on  using Socket
+		    35 Query	select @@version_comment limit 1
+250721  3:22:47	    35 Query	show databases
+250721  3:23:25	    35 Query	select user from mysql.user
+250721  3:23:33	    35 Quit	
+250721  3:23:43	    36 Connect	root@localhost on  using Socket
+		    36 Query	select @@version_comment limit 1
+250721  3:23:55	    36 Query	select user from mysql.user
+250721  3:24:09	    36 Query	select user, host from mysql.user
+250721  3:25:04	    36 Quit	
+250721  3:47:04	    37 Connect	root@localhost on  using Socket
+		    37 Query	select @@version_comment limit 1
+250721  3:47:17	    37 Query	show databases
+250721  3:47:34	    37 Query	select mydbmanager_user
+250721  3:47:59	    37 Query	SELECT DATABASE()
+		    37 Init DB	mydbmanager_user
+		    37 Query	show databases
+		    37 Query	show tables
+		    37 Field List	user_details 
+250721  3:48:04	    37 Query	show tables
+250721  3:48:16	    37 Query	select * from user_details
+250721  3:49:10	    37 Query	select id, username, status, role, created_at, last_updated_at, created_by, last_updated_by from user_details
+250721  3:49:41	    37 Query	select id, username, status, role, created_at, last_updated_at, created_by, last_updated_by, deleted_by from user_details
+250721  4:42:59	    37 Query	show grants for 'app_user'@'localhost'
+250721  4:55:33	    37 Query	describe user_details
+250721  5:01:02	    37 Query	select coulmn_name from user_details
+250721  5:02:42	    37 Query	select coulmn_name from information _schema.columns where table_name = 'user_details' and table_schema = 'mydabmanager_user'
+250721  5:03:28	    37 Query	select column_name from information _schema.columns where table_name = 'user_details' and table_schema = 'mydabmanager_user'
+250721  5:03:38	    37 Query	SELECT column_name 
+FROM information_schema.columns 
+WHERE table_name = 'user_details' 
+  AND table_schema = 'mydbmanager_user'
+250721  5:10:00	    37 Query	show databases
+250721  5:10:20	    37 Query	SELECT DATABASE()
+		    37 Init DB	mydbmanager_admin
+		    37 Query	show databases
+		    37 Query	show tables
+250721  5:10:26	    37 Query	show tables
+250721  5:32:20	    37 Query	CREATE TABLE user_info (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(20) NOT NULL,
+    database_name VARCHAR(100) NOT NULL,
+    table_name VARCHAR(100) NOT NULL,
+    access_type VARCHAR(10) NOT NULL CHECK (access_type IN ('read', 'write', 'none')),
+    granted_by VARCHAR(20) NOT NULL,
+    granted_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    last_updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    remarks TEXT,
+    UNIQUE (username, database_name, table_name) 
+)
+250721  5:32:29	    37 Query	show tables
+250721  5:32:43	    37 Query	describe user_info
+250721  7:46:07	    37 Quit	
+250721 17:37:33	    38 Connect	root@localhost on  using Socket
+		    38 Query	select @@version_comment limit 1
+250721 17:37:44	    38 Query	show databases
+250721 17:37:54	    38 Query	SELECT DATABASE()
+		    38 Init DB	mydbmanager_user
+		    38 Query	show databases
+		    38 Query	show tables
+		    38 Field List	user_details 
+250721 17:37:59	    38 Query	show tables
+250721 17:38:14	    38 Query	SELECT DATABASE()
+		    38 Init DB	mydbmanager_admin
+		    38 Query	show databases
+		    38 Query	show tables
+		    38 Field List	user_info 
+250721 17:38:18	    38 Query	show tables
+250721 17:38:30	    38 Query	describe  user_info
+250721 20:13:10	    38 Query	show databases
+250721 20:13:59	    38 Query	select user from mysql.user
+250721 20:14:12	    38 Query	select user, host from mysql.user
+250721 20:21:42	    38 Query	select user, host, privileges from mysql.user
+250721 20:21:59	    38 Query	select user, host, privilages from mysql.user
+250721 20:22:13	    38 Query	select user, host, Privileges from mysql.user
+250721 20:22:26	    38 Quit	
+250721 20:23:28	    39 Connect	root@localhost on  using Socket
+		    39 Query	select @@version_comment limit 1
+250721 20:23:33	    39 Query	show databases
+250721 20:23:44	    39 Query	select * from mysql.user
+250721 20:26:23	    39 Query	SELECT user, host, Super_priv, Grant_priv FROM mysql.user
+250721 20:28:00	    39 Query	grant all privileges on *.* to 'app_user'@'192.168.0.184' with grant option
+250721 20:28:20	    39 Query	grant all privileges on *.* to 'app_user'@'localhost' with grant option
+250721 20:28:55	    39 Query	select user, host, suiper_priv, grant_priv from mysql.user
+250721 20:29:00	    39 Query	select user, host, super_priv, grant_priv from mysql.user
+250721 21:21:44	    40 Connect	app_user@192.168.0.194 on your_database using TCP/IP
+250721 21:25:21	    39 Query	show databases
+250721 21:25:46	    41 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    41 Query	SET NAMES utf8mb4
+250722  0:03:01	    42 Connect	root@localhost on  using Socket
+		    42 Query	FLUSH LOGS
