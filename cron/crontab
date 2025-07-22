@@ -20,7 +20,7 @@
 4 0 * * * cp /location/mariadb/logs/*-$(date -d "yesterday" +\%F).log /location/github/logs/
 
 # Mask all the ips in the logs here at 12:05 AM
-5 0 * * * /location/github/scripts/auto-push-logs.sh >> /location/github/logs/push-cron.log 2>&1
+5 0 * * * /location/github/scripts/sainitize-logs.sh >/dev/null 2>&1
 
 # Push logs to github at 12:10 AM
 10 0 * * * cd /location/github && git add --ignore-removal logs/ && git commit -m "Auto-update logs: $(date '+\%Y-\%m-\%d \%H:\%M:\%S')" && git push origin main
