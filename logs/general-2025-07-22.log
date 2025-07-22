@@ -1,0 +1,281 @@
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port: 3306  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+		    42 Quit	
+250722  1:03:42	    39 Query	show databases
+250722  2:54:44	    43 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    43 Query	SET NAMES utf8mb4
+250722  2:55:27	    44 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    44 Query	SET NAMES utf8mb4
+250722  2:57:28	    44 Query	CREATE DATABASE test1
+250722  3:03:55	    44 Query	CREATE DATABASE test2
+250722  3:04:19	    45 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    45 Query	SET NAMES utf8mb4
+250722  3:04:24	    45 Query	CREATE DATABASE test
+250722  3:04:48	    45 Query	CREATE DATABASE test
+250722  3:04:58	    45 Query	CREATE DATABASE test
+250722  3:05:18	    39 Query	show databases
+250722  3:05:27	    45 Query	CREATE DATABASE test
+250722  3:05:40	    39 Query	show databases
+250722  3:06:47	    45 Query	CREATE DATABASE test4
+250722  3:06:56	    39 Query	show databases
+250722  3:07:03	    45 Query	CREATE DATABASE test3
+250722  4:03:07	    46 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    46 Query	SET NAMES utf8mb4
+250722  4:03:57	    46 Query	SHOW DATABASES
+		    46 Quit	
+250722  4:07:03	    47 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    47 Query	SET NAMES utf8mb4
+250722  4:07:23	    47 Query	SHOW DATABASES
+		    47 Quit	
+250722  4:08:28	    48 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    48 Query	SET NAMES utf8mb4
+250722  4:08:31	    48 Query	SHOW DATABASES
+		    48 Quit	
+250722  4:14:48	    49 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    49 Query	SET NAMES utf8mb4
+		    49 Query	SHOW DATABASES
+		    49 Quit	
+250722  4:14:51	    50 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    50 Query	SET NAMES utf8mb4
+		    50 Query	SHOW DATABASES
+		    50 Quit	
+250722  4:15:00	    51 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    51 Query	SET NAMES utf8mb4
+		    51 Query	SHOW DATABASES
+		    51 Quit	
+250722  4:15:11	    52 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    52 Query	SET NAMES utf8mb4
+		    52 Query	SHOW DATABASES
+		    52 Quit	
+/db1/myserver/mariadb/bin/mysqld, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port: 3306  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+/db1/myserver/mariadb/bin/mysqld, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port: 3306  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+250722  4:56:57	     3 Connect	root@localhost on  using Socket
+		     3 Connect	Access denied for user 'root'@'localhost'
+250722  4:57:05	     4 Connect	root@localhost on  using Socket
+		     4 Connect	Access denied for user 'root'@'localhost'
+250722  4:57:20	     5 Connect	root@localhost on  using Socket
+		     5 Connect	Access denied for user 'root'@'localhost'
+250722  4:57:36	     6 Connect	harsh@localhost on  using Socket
+250722  4:57:37	     6 Query	select @@version_comment limit 1
+250722  4:57:44	     6 Quit	
+250722  4:57:54	     7 Connect	root@localhost on  using Socket
+		     7 Connect	Access denied for user 'root'@'localhost'
+250722  4:58:00	     8 Connect	root@localhost on  using Socket
+		     8 Connect	Access denied for user 'root'@'localhost'
+250722  4:59:03	     9 Connect	root@localhost on  using Socket
+		     9 Query	select @@version_comment limit 1
+250722  4:59:11	     9 Query	show databases
+250722  5:13:58	     9 Query	select user from mysql.user
+250722  5:14:33	     9 Query	MariaDB [(none)]> select user from mysql.user
+250722  5:14:47	     9 Query	+-------------+
+| User        |
++-------------+
+| PUBLIC      |
+|             |
+|             |
+| harsh       |
+| mariadb.sys |
+| root        |
+250722  5:14:50	     9 Query	SELECT user, host FROM mysql.user WHERE user = ''
+250722  5:15:06	     9 Query	DROP USER ''@'localhost'
+250722  5:15:08	     9 Query	DROP USER ''@'localhost'
+250722  5:15:15	     9 Query	DROP USER ''@'localhost'
+250722  5:15:30	     9 Query	DROP USER ''@'%'
+250722  5:16:01	     9 Query	seect user from mysql.user
+250722  5:16:08	     9 Query	select user from mysql.user
+250722  5:16:15	     9 Quit	
+250722  5:16:32	    10 Connect	root@localhost on  using Socket
+		    10 Connect	Access denied for user 'root'@'localhost'
+250722  5:16:55	    11 Connect	root@localhost on  using Socket
+		    11 Query	select @@version_comment limit 1
+250722  5:17:06	    11 Query	select user from myswl.user
+250722  5:17:11	    11 Query	select user from mysql.user
+250722  5:17:20	    11 Query	SELECT user, host FROM mysql.user WHERE user = ''
+250722  5:17:35	    11 Query	DROP USER ''@'harsh'
+250722  5:17:56	    11 Quit	
+250722  5:18:12	    12 Connect	root@localhost on  using Socket
+250722  5:18:13	    12 Query	select @@version_comment limit 1
+250722  5:18:36	    12 Query	select user from mysql.user
+250722  5:19:14	    12 Query	DROP USER 'PUBLIC'@'localhost'
+250722  5:19:39	    12 Query	select user, host from mysql.user
+250722  5:19:47	    12 Query	DROP USER 'PUBLIC'@'%'
+250722  5:19:51	    12 Query	DROP USER 'PUBLIC'@''
+250722  5:20:22	    12 Quit	
+250722  5:20:35	    13 Connect	root@localhost on  using Socket
+		    13 Query	select @@version_comment limit 1
+250722  5:20:38	    13 Query	SELECT CONCAT("DROP USER '", user, "'@'", host, "';") AS cmd FROM mysql.user WHERE user='PUBLIC'
+250722  5:21:04	    13 Query	DROP USER 'PUBLIC'@''
+250722  5:21:54	    13 Query	DELETE FROM mysql.user WHERE user='PUBLIC' AND host=''
+250722  5:22:02	    13 Query	FLUSH PRIVILEGES
+250722  5:22:08	    13 Query	SELECT user, host FROM mysql.user
+250722  5:23:42	    13 Query	create user 'app_user'@'localhost' identified by 'Harsh0@server'
+250722  5:24:04	    13 Query	select user, host, identified by from mysql.user
+250722  5:24:57	    13 Query	grant all privileges on *.* to 'app_user'@'localhost' with grant option
+250722  5:25:30	    13 Query	select user, host, super_admin from mysql.user
+250722  5:25:36	    13 Query	select user, host from mysql.user
+250722  5:31:26	    13 Query	CREATE USER 'app_user'@'192.168.0.194' IDENTIFIED BY 'Harsh0@server'
+250722  5:31:34	    13 Query	GRANT ALL PRIVILEGES ON *.* TO 'app_user'@'192.168.0.194' WITH GRANT OPTION
+250722  5:31:42	    13 Query	FLUSH PRIVILEGES
+250722  5:31:49	    13 Quit	
+250722  5:31:58	    18 Connect	root@localhost on  using Socket
+		    18 Query	select @@version_comment limit 1
+250722  5:32:00	    18 Query	SELECT user, host FROM mysql.user WHERE user = 'app_user'
+250722  5:32:17	    19 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    19 Query	SET NAMES utf8mb4
+		    19 Query	SHOW DATABASES
+		    19 Quit	
+250722  5:32:21	    20 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    20 Query	SET NAMES utf8mb4
+		    20 Query	SHOW DATABASES
+		    20 Quit	
+250722  5:32:29	    18 Query	show databases
+250722  5:32:37	    18 Query	drop test
+250722  5:33:12	    18 Query	drop database test
+		    18 Query	SELECT DATABASE()
+250722  5:33:24	    21 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    21 Query	SET NAMES utf8mb4
+		    21 Query	CREATE DATABASE test1
+		    21 Quit	
+250722  5:33:29	    22 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    22 Query	SET NAMES utf8mb4
+		    22 Query	CREATE DATABASE test2
+		    22 Quit	
+250722  5:33:33	    23 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    23 Query	SET NAMES utf8mb4
+		    23 Query	CREATE DATABASE test3
+		    23 Quit	
+250722  5:33:37	    24 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    24 Query	SET NAMES utf8mb4
+		    24 Query	CREATE DATABASE test4
+		    24 Quit	
+250722  5:33:39	    25 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    25 Query	SET NAMES utf8mb4
+		    25 Query	SHOW DATABASES
+		    25 Quit	
+250722  5:33:44	    26 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    26 Query	SET NAMES utf8mb4
+250722  5:33:51	    27 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    27 Query	SET NAMES utf8mb4
+		    27 Query	SHOW DATABASES
+		    27 Quit	
+250722  5:34:58	    28 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    28 Query	SET NAMES utf8mb4
+		    28 Query	DROP DATABASE test4
+		    28 Quit	
+250722  5:35:02	    29 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    29 Query	SET NAMES utf8mb4
+		    29 Query	SHOW DATABASES
+		    29 Quit	
+250722  5:35:04	    30 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    30 Query	SET NAMES utf8mb4
+		    30 Query	SHOW DATABASES
+		    30 Quit	
+250722  5:35:12	    31 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    31 Query	SET NAMES utf8mb4
+		    31 Query	DROP DATABASE test3
+		    31 Quit	
+250722  5:35:16	    32 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    32 Query	SET NAMES utf8mb4
+		    32 Query	SHOW DATABASES
+		    32 Quit	
+250722  5:37:53	    33 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    33 Query	SET NAMES utf8mb4
+		    33 Query	DROP DATABASE test2
+		    33 Quit	
+250722  5:37:57	    34 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    34 Query	SET NAMES utf8mb4
+		    34 Query	SHOW DATABASES
+		    34 Quit	
+250722  5:38:11	    35 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    35 Query	SET NAMES utf8mb4
+		    35 Query	DROP DATABASE test1
+		    35 Quit	
+250722  5:38:16	    36 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    36 Query	SET NAMES utf8mb4
+		    36 Query	SHOW DATABASES
+		    36 Quit	
+250722  5:38:19	    37 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    37 Query	SET NAMES utf8mb4
+		    37 Query	SHOW DATABASES
+		    37 Quit	
+250722  5:58:56	    18 Quit	
+/db1/myserver/mariadb/bin/mysqld, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port: 3306  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+250722 16:50:01	    38 Connect	root@localhost on  using Socket
+		    38 Connect	Access denied for user 'root'@'localhost'
+250722 16:58:45	    39 Connect	root@localhost on  using Socket
+		    39 Query	select @@version_comment limit 1
+250722 18:57:04	    40 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    40 Query	SET NAMES utf8mb4
+		    40 Query	SHOW DATABASES
+		    40 Quit	
+250722 18:57:14	    41 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    41 Query	SET NAMES utf8mb4
+		    41 Query	CREATE DATABASE test1
+		    41 Quit	
+250722 19:00:57	    42 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    42 Query	SET NAMES utf8mb4
+		    42 Query	CREATE DATABASE test2
+		    42 Quit	
+250722 19:01:03	    43 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    43 Query	SET NAMES utf8mb4
+		    43 Query	CREATE DATABASE test3
+		    43 Quit	
+250722 19:01:06	    44 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    44 Query	SET NAMES utf8mb4
+		    44 Query	CREATE DATABASE test4
+		    44 Quit	
+250722 19:02:09	    45 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    45 Query	SET NAMES utf8mb4
+		    45 Query	SHOW DATABASES
+		    45 Quit	
+250722 21:32:16	    46 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+250722 21:32:17	    46 Query	SET NAMES utf8mb4
+		    46 Query	SHOW DATABASES
+		    46 Quit	
+250722 21:38:07	    47 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    47 Query	SET NAMES utf8mb4
+		    47 Query	SHOW DATABASES
+250722 21:38:08	    47 Quit	
+250722 21:38:15	    48 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    48 Query	SET NAMES utf8mb4
+		    48 Query	CREATE USER 'test1'@'192.168.0.194' IDENTIFIED BY 'test1'
+		    48 Query	GRANT All ON test1.* TO 'test1'@'192.168.0.194'
+		    48 Quit	
+250722 21:39:39	    49 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    49 Query	SET NAMES utf8mb4
+		    49 Query	CREATE USER 'test2'@'192.168.0.194' IDENTIFIED BY 'test2'
+		    49 Query	GRANT All ON test2.* TO 'test2'@'192.168.0.194'
+		    49 Quit	
+250722 21:41:03	    50 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    50 Query	SET NAMES utf8mb4
+		    50 Query	CREATE USER 'test3'@'192.168.0.194' IDENTIFIED BY 'test3'
+		    50 Query	GRANT Select, Drop, Insert, Update, Delete, Alter ON test3.* TO 'test3'@'192.168.0.194'
+		    50 Quit	
+250722 21:41:18	    51 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    51 Query	SET NAMES utf8mb4
+		    51 Query	CREATE USER 'test4'@'192.168.0.194' IDENTIFIED BY 'test4'
+		    51 Query	GRANT All ON test4.* TO 'test4'@'192.168.0.194'
+250722 21:41:19	    51 Quit	
+250722 23:00:08	    39 Query	select user from mysql.user
+250722 23:00:18	    39 Query	select user, host from mysql.user
+250722 23:09:43	    39 Query	select users, host from mysql.user
+250722 23:09:50	    39 Query	select user, host from mysql.user
+250722 23:26:47	    52 Connect	test1@192.168.0.194 on  using TCP/IP
+		    52 Query	select @@version_comment limit 1
+250723  0:02:08	    53 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    53 Query	SET NAMES utf8mb4
+		    53 Query	Select user, host from mysql.user
+		    53 Quit	
+250723  0:02:27	    54 Connect	app_user@192.168.0.194 on mysql using TCP/IP
+		    54 Query	SET NAMES utf8mb4
+		    54 Query	Select user, host from mysql.user
+		    54 Quit	
+250723  0:03:01	    55 Connect	root@localhost on  using Socket
+		    55 Connect	Access denied for user 'root'@'localhost'
