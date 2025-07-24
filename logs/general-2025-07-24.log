@@ -1,0 +1,18 @@
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+250724 18:xxx:xxx	     3 Connect	root@localhost on  using Socket
+		     3 Query	select @@version_comment limit 1
+250724 18:xxx:xxx	     3 Query	SHOW DATABASES
+250724 18:xxx:xxx	     3 Query	SELECT user FROM mysql.user
+250724 18:xxx:xxx	     3 Quit	
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+250724 22:xxx:xxx	     4 Connect	root@localhost on  using Socket
+		     4 Query	select @@version_comment limit 1
+250725  0:xxx:xxx	     5 Connect	root@localhost on  using Socket
+		     5 Connect	Access denied for user 'root'@'localhost'

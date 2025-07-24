@@ -1,0 +1,123 @@
+250724 18:xxx:xxx mysqld_safe Starting mariadbd daemon with databases from /db1/myserver/mariadb/data
+2025-07-24 18:xxx:xxx 0 [Note] Starting MariaDB 10.11.6-MariaDB-log source revision fecd78b83785d5ae96f2c6ff340375be803cd299 as process 4118
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Compressed tables use zlib 1.3
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Number of transaction pools: 1
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Using Linux native AIO
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Completed initialization of buffer pool
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: File system buffers for log disabled (block size=4096 bytes)
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: End of log at LSN=56008
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: 128 rollback segments are active.
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: log sequence number 56008; transaction id 46
+2025-07-24 18:xxx:xxx 0 [Note] Plugin 'FEEDBACK' is disabled.
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Loading buffer pool(s) from /db1/myserver/mariadb/data/ib_buffer_pool
+2025-07-24 18:xxx:xxx 0 [Note] Server socket created on IP: 'xxx.xxx.xxx.xxx'.
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Buffer pool(s) load completed at 250724 18:xxx:xxx
+2025-07-24 18:xxx:xxx 0 [Note] /db1/myserver/mariadb/bin/mariadbd: ready for connections.
+Version: '10.11.6-MariaDB-log'  socket: '/db1/myserver/mariadb/mysql.sock'  port xxx  MariaDB Server
+250724 18:xxx:xxx mysqld_safe A mysqld process already exists
+250724 18:xxx:xxx mysqld_safe Starting mariadbd daemon with databases from /db1/myserver/mariadb/data
+2025-07-24 18:xxx:xxx 0 [Note] Starting MariaDB 10.11.6-MariaDB-log source revision fecd78b83785d5ae96f2c6ff340375be803cd299 as process 4326
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Compressed tables use zlib 1.3
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Number of transaction pools: 1
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Using Linux native AIO
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Completed initialization of buffer pool
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: File system buffers for log disabled (block size=4096 bytes)
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: End of log at LSN=56008
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: 128 rollback segments are active.
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: log sequence number 56008; transaction id 46
+2025-07-24 18:xxx:xxx 0 [Note] Plugin 'FEEDBACK' is disabled.
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Loading buffer pool(s) from /db1/myserver/mariadb/data/ib_buffer_pool
+2025-07-24 18:xxx:xxx 0 [Note] Server socket created on IP: 'xxx.xxx.xxx.xxx'.
+2025-07-24 18:xxx:xxx 0 [Note] InnoDB: Buffer pool(s) load completed at 250724 18:xxx:xxx
+2025-07-24 18:xxx:xxx 0 [Note] /db1/myserver/mariadb/bin/mariadbd: ready for connections.
+Version: '10.11.6-MariaDB-log'  socket: '/db1/myserver/mariadb/mysql.sock'  port xxx  MariaDB Server
+
+Status information:
+
+Current dir: /db1/myserver/mariadb/data/
+Running threads: 0  Cached threads: 0  Stack size: 299008
+
+Key caches:
+default
+Buffer_size:     134217728
+Block_size:           1024
+Division_limit:        100
+Age_threshold:         300
+Partitions:              0
+blocks used:             0
+not flushed:             0
+w_requests:              0
+writes:                  0
+r_requests:              0
+reads:                   0
+
+
+handler status:
+read_key:            6
+read_next:           6
+read_rnd             0
+read_first:          4
+write:               0
+delete               0
+update:              0
+
+Table status:
+Opened tables:         20
+Open tables:           13
+Open files:            30
+Open streams:           4
+
+Alarm status:
+Active alarms:   0
+Max used alarms: 0
+Next alarm time: 0
+
+Memory status:
+Non-mmapped space allocated from system: 9195520
+Number of free chunks:                   39
+Number of fastbin blocks:                19
+Number of mmapped regions:               8
+Space in mmapped regions:                41029632
+Maximum total allocated space:           0
+Space available in freed fastbin blocks: 1072
+Total allocated space:                   7578528
+Total free space:                        1616992
+Top-most, releasable space:              78544
+Estimated memory (with thread stack):    50225152
+Global memory allocated by server:       443128080
+Memory allocated by threads:             0
+
+
+
+Events status:
+LLA = Last Locked At  LUA = Last Unlocked At
+WOC = Waiting On Condition  DL = Data Locked
+
+Event scheduler status:
+State      : INITIALIZED
+Thread id  : 0
+LLA        : n/a:0
+LUA        : n/a:0
+WOC        : NO
+Workers    : 0
+Executed   : 0
+Data locked: NO
+
+Event queue status:
+Element count   : 0
+Data locked     : NO
+Attempting lock : NO
+LLA             : init_queue:xxx
+LUA             : init_queue:xxx
+WOC             : NO
+Next activation : never
+2025-07-25  0:xxx:xxx 5 [Warning] Access denied for user 'root'@'localhost'
