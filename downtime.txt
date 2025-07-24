@@ -1,5 +1,7 @@
 Downtime Record:
 
 -------------------------
-No Downtime Yet
+Start - 23-07-2025
+END - 24-07-2025
+Issue - FLUSH LOGS DID NOT WORK FROM CRON JOB
 -------------------------
