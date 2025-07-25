@@ -1,0 +1,122 @@
+250725 00:xxx:xxx mysqld_safe mysqld from pid file /db1/myserver/mariadb/mariadb.pid ended
+250725 00:xxx:xxx mysqld_safe Starting mariadbd daemon with databases from /db1/myserver/mariadb/data
+2025-07-25  0:xxx:xxx 0 [Note] Starting MariaDB 10.11.6-MariaDB-log source revision fecd78b83785d5ae96f2c6ff340375be803cd299 as process 5495
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Compressed tables use zlib 1.3
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Number of transaction pools: 1
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Using Linux native AIO
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Completed initialization of buffer pool
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: File system buffers for log disabled (block size=4096 bytes)
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: End of log at LSN=56008
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: 128 rollback segments are active.
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: log sequence number 56008; transaction id 46
+2025-07-25  0:xxx:xxx 0 [Note] Plugin 'FEEDBACK' is disabled.
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Loading buffer pool(s) from /db1/myserver/mariadb/data/ib_buffer_pool
+2025-07-25  0:xxx:xxx 0 [Note] Server socket created on IP: 'xxx.xxx.xxx.xxx'.
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Buffer pool(s) load completed at 250725  0:xxx:xxx
+2025-07-25  0:xxx:xxx 0 [Note] /db1/myserver/mariadb/bin/mariadbd: ready for connections.
+Version: '10.11.6-MariaDB-log'  socket: '/db1/myserver/mariadb/mysql.sock'  port xxx  MariaDB Server
+2025-07-25  0:xxx:xxx 3 [Warning] Access denied for user 'root'@'localhost'
+2025-07-25  0:xxx:xxx 4 [Warning] Access denied for user 'root'@'localhost'
+2025-07-25  0:xxx:xxx 5 [Warning] Access denied for user 'root'@'localhost'
+2025-07-25  0:xxx:xxx 0 [Note] /db1/myserver/mariadb/bin/mariadbd (initiated by: unknown): Normal shutdown
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: FTS optimize thread exiting.
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Starting shutdown...
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Dumping buffer pool(s) to /db1/myserver/mariadb/data/ib_buffer_pool
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Buffer pool(s) dump completed at 250725  0:xxx:xxx
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Shutdown completed; log sequence number 56008; transaction id 47
+2025-07-25  0:xxx:xxx 0 [Note] /db1/myserver/mariadb/bin/mariadbd: Shutdown complete
+
+250725 00:xxx:xxx mysqld_safe mysqld from pid file /db1/myserver/mariadb/mariadb.pid ended
+250725 00:xxx:xxx mysqld_safe Starting mariadbd daemon with databases from /db1/myserver/mariadb/data
+2025-07-25  0:xxx:xxx 0 [Note] Starting MariaDB 10.11.6-MariaDB-log source revision fecd78b83785d5ae96f2c6ff340375be803cd299 as process 5640
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Compressed tables use zlib 1.3
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Number of transaction pools: 1
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Using Linux native AIO
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Completed initialization of buffer pool
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: File system buffers for log disabled (block size=4096 bytes)
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: End of log at LSN=56008
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: 128 rollback segments are active.
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: log sequence number 56008; transaction id 46
+2025-07-25  0:xxx:xxx 0 [Note] Plugin 'FEEDBACK' is disabled.
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Loading buffer pool(s) from /db1/myserver/mariadb/data/ib_buffer_pool
+2025-07-25  0:xxx:xxx 0 [Note] Server socket created on IP: 'xxx.xxx.xxx.xxx'.
+2025-07-25  0:xxx:xxx 0 [Note] /db1/myserver/mariadb/bin/mariadbd: ready for connections.
+Version: '10.11.6-MariaDB-log'  socket: '/db1/myserver/mariadb/mysql.sock'  port xxx  MariaDB Server
+2025-07-25  0:xxx:xxx 0 [Note] InnoDB: Buffer pool(s) load completed at 250725  0:xxx:xxx
+2025-07-25  2:xxx:xxx 5 [Warning] Hostname 'Harsh' does not resolve to 'xxx.xxx.xxx.xxx'.
+2025-07-25  2:xxx:xxx 5 [Note] Hostname 'Harsh' has the following IP addresses:
+2025-07-25  2:xxx:xxx 5 [Note]  - xxx.xxx.xxx.xxx
+
+Status information:
+
+Current dir: /db1/myserver/mariadb/data/
+Running threads: 1  Cached threads: 0  Stack size: 299008
+
+Key caches:
+default
+Buffer_size:     134217728
+Block_size:           1024
+Division_limit:        100
+Age_threshold:         300
+Partitions:              0
+blocks used:             0
+not flushed:             0
+w_requests:              0
+writes:                  0
+r_requests:              0
+reads:                   0
+
+
+handler status:
+read_key:           10
+read_next:           0
+read_rnd             0
+read_first:          1
+write:               0
+delete               0
+update:              0
+
+Table status:
+Opened tables:         25
+Open tables:            6
+Open files:            12
+Open streams:           4
+
+Alarm status:
+Active alarms:   0
+Max used alarms: 0
+Next alarm time: 0
+
+Memory status:
+Non-mmapped space allocated from system: 9474048
+Number of free chunks:                   184
+Number of fastbin blocks:                125
+Number of mmapped regions:               8
+Space in mmapped regions:                41029632
+Maximum total allocated space:           0
+Space available in freed fastbin blocks: 7984
+Total allocated space:                   7189504
+Total free space:                        2284544
+Top-most, releasable space:              94000
+Estimated memory (with thread stack):    50802688
+Global memory allocated by server:       442624328
+Memory allocated by threads:             70088
+
+
+
+Events status:
+LLA = Last Locked At  LUA = Last Unlocked At
+WOC = Waiting On Condition  DL = Data Locked
+The Event Scheduler is disabled
+
+2025-07-25 19:xxx:xxx 31 [Warning] IP address 'xxx.xxx.xxx.xxx' could not be resolved: Name or service not known
+2025-07-26  0:xxx:xxx 32 [Warning] Access denied for user 'root'@'localhost'

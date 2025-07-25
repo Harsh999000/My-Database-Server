@@ -1,0 +1,156 @@
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+250725  0:xxx:xxx	     3 Connect	root@localhost on  using Socket
+		     3 Connect	Access denied for user 'root'@'localhost'
+250725  0:xxx:xxx	     4 Connect	root@localhost on  using Socket
+		     4 Connect	Access denied for user 'root'@'localhost'
+250725  0:xxx:xxx	     5 Connect	root@localhost on  using Socket
+		     5 Connect	Access denied for user 'root'@'localhost'
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+250725  0:xxx:xxx	     3 Connect	root@localhost on  using Socket
+		     3 Query	select @@version_comment limit 1
+250725  0:xxx:xxx	     3 Query	show databases
+250725  1:xxx:xxx	     4 Connect	harsh@localhost on  using Socket
+		     4 Query	/*!40100 SET @@SQL_MODE='' */
+		     4 Query	/*!40103 SET TIME_ZONE='+00:xxx' */
+		     4 Query	/*!100100 SET @@MAX_STATEMENT_TIME=0.000000 */
+		     4 Query	/*!100100 SET WAIT_TIMEOUT=DEFAULT */
+		     4 Query	set optimizer_switch='semijoin=off'
+		     4 Query	SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IS NOT NULL GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE, TOTAL_EXTENTS, INITIAL_SIZE ORDER BY LOGFILE_GROUP_NAME
+		     4 Query	SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME
+		     4 Query	set optimizer_switch=default
+		     4 Query	SHOW DATABASES
+		     4 Init DB	mysql
+		     4 Query	SHOW CREATE DATABASE IF NOT EXISTS `mysql`
+		     4 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'general_log'
+		     4 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		     4 Query	SET SESSION character_set_results = 'binary'
+		     4 Query	show create table `general_log`
+		     4 Quit	
+250725  2:xxx:xxx	     3 Query	show databases
+250725  2:xxx:xxx	     3 Query	SELECT DATABASE()
+		     3 Init DB	test1
+		     3 Query	show databases
+		     3 Query	show tables
+		     3 Field List	table1 
+		     3 Field List	table2 
+250725  2:xxx:xxx	     3 Query	show tables
+250725  2:xxx:xxx	     3 Query	ALTER TABLE Table1 ADD COLUMN Column3 VARCHAR(20) NULL  UNIQUE
+250725  2:xxx:xxx	     3 Query	ALTER TABLE table1 ADD COLUMN Column3 VARCHAR(20) NULL  UNIQUE
+250725  2:xxx:xxx	     3 Query	describe table1
+250725  2:xxx:xxx	     5 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		     5 Query	SET NAMES utf8mb4
+		     5 Query	ALTER TABLE test1.table1 ADD COLUMN column4 INT  0
+		     5 Quit	
+250725  2:xxx:xxx	     6 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		     6 Query	SET NAMES utf8mb4
+		     6 Query	ALTER TABLE test1.table1 ADD COLUMN column4 INT
+250725  2:xxx:xxx	     6 Quit	
+250725  2:xxx:xxx	     7 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		     7 Query	SET NAMES utf8mb4
+		     7 Query	SHOW DATABASES
+		     7 Quit	
+250725  2:xxx:xxx	     8 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		     8 Query	SET NAMES utf8mb4
+		     8 Query	SHOW TABLES FROM test1
+250725  2:xxx:xxx	     8 Quit	
+250725  2:xxx:xxx	     9 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		     9 Query	SET NAMES utf8mb4
+		     9 Query	DESCRIBE test1.table2
+		     9 Quit	
+250725  2:xxx:xxx	    10 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    10 Query	SET NAMES utf8mb4
+		    10 Query	ALTER TABLE test1.table2 ADD COLUMN column3 INT
+250725  2:xxx:xxx	    10 Quit	
+250725  2:xxx:xxx	    11 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    11 Query	SET NAMES utf8mb4
+		    11 Query	ALTER TABLE test1.table2 ADD COLUMN column4 VARCHAR(20)
+		    11 Quit	
+250725  3:xxx:xxx	    12 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    12 Query	SET NAMES utf8mb4
+		    12 Query	ALTER TABLE test1.table1 DROP COLUMN column4
+250725  3:xxx:xxx	    12 Quit	
+250725  3:xxx:xxx	    13 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    13 Query	SET NAMES utf8mb4
+		    13 Query	DESCRIBE test1.table2
+		    13 Quit	
+250725  3:xxx:xxx	    14 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    14 Query	SET NAMES utf8mb4
+		    14 Query	ALTER TABLE test1.table1 DROP COLUMN column3
+		    14 Quit	
+250725  3:xxx:xxx	    15 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    15 Query	SET NAMES utf8mb4
+		    15 Query	DESCRIBE test1.table1
+		    15 Quit	
+250725  3:xxx:xxx	    16 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    16 Query	SET NAMES utf8mb4
+250725  3:xxx:xxx	    16 Query	DESCRIBE test1.table2
+		    16 Quit	
+250725  3:xxx:xxx	    17 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    17 Query	SET NAMES utf8mb4
+		    17 Query	ALTER TABLE test1.table2 DROP COLUMN column3
+		    17 Quit	
+250725  3:xxx:xxx	    18 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    18 Query	SET NAMES utf8mb4
+		    18 Query	ALTER TABLE test1.table2 DROP COLUMN column4
+		    18 Quit	
+250725  3:xxx:xxx	    19 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    19 Query	SET NAMES utf8mb4
+		    19 Query	DESCRIBE test1.table2
+		    19 Quit	
+250725  3:xxx:xxx	    20 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    20 Query	SET NAMES utf8mb4
+		    20 Query	DESCRIBE test1.table2
+		    20 Quit	
+250725  3:xxx:xxx	    21 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    21 Query	SET NAMES utf8mb4
+		    21 Query	ALTER TABLE test1.table2 DROP COLUMN id
+		    21 Quit	
+250725  3:xxx:xxx	    22 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    22 Query	SET NAMES utf8mb4
+		    22 Query	ALTER TABLE test1.table2 DROP COLUMN name
+		    22 Quit	
+250725  3:xxx:xxx	    23 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    23 Query	SET NAMES utf8mb4
+		    23 Query	ALTER TABLE test1.table2 ADD COLUMN column4 VARCHAR(20)
+		    23 Quit	
+250725  3:xxx:xxx	    24 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    24 Query	SET NAMES utf8mb4
+		    24 Query	ALTER TABLE test1.table2 DROP COLUMN column4
+		    24 Quit	
+250725  3:xxx:xxx	    25 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    25 Query	SET NAMES utf8mb4
+		    25 Query	DESCRIBE test1.table2
+		    25 Quit	
+250725  3:xxx:xxx	    26 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    26 Query	SET NAMES utf8mb4
+		    26 Query	DESCRIBE test1.table1
+		    26 Quit	
+250725  3:xxx:xxx	    27 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    27 Query	SET NAMES utf8mb4
+		    27 Query	ALTER TABLE test1.table1 DROP COLUMN id
+		    27 Quit	
+250725  3:xxx:xxx	    28 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    28 Query	SET NAMES utf8mb4
+		    28 Query	ALTER TABLE test1.table1 DROP COLUMN name
+		    28 Quit	
+250725  3:xxx:xxx	    29 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    29 Query	SET NAMES utf8mb4
+		    29 Query	DESCRIBE test1.table1
+		    29 Quit	
+250725  6:xxx:xxx	     3 Quit	
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+250725 18:xxx:xxx	    30 Connect	root@localhost on  using Socket
+		    30 Query	select @@version_comment limit 1
+250725 19:xxx:xxx	    31 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    31 Query	SET NAMES utf8mb4
+		    31 Query	DESCRIBE test1.table1
+		    31 Quit	
+250725 20:xxx:xxx	    30 Quit	
+250726  0:xxx:xxx	    32 Connect	root@localhost on  using Socket
+		    32 Connect	Access denied for user 'root'@'localhost'
