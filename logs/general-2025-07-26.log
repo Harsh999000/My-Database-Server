@@ -1,0 +1,6 @@
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+250726 14:xxx:xxx	    34 Query	show databases
+250727  0:xxx:xxx	    35 Connect	root@localhost on  using Socket
+		    35 Connect	Access denied for user 'root'@'localhost'

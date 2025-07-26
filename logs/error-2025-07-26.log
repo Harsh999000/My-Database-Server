@@ -1,0 +1,2 @@
+2025-07-26 22:xxx:xxx 34 [Warning] Aborted connection 34 to db: 'unconnected' user: 'root' host: 'localhost' (Got timeout reading communication packets)
+2025-07-27  0:xxx:xxx 35 [Warning] Access denied for user 'root'@'localhost'
