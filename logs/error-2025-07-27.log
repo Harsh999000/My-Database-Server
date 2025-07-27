@@ -1,0 +1,1 @@
+2025-07-27 10:xxx:xxx 36 [Warning] Aborted connection 36 to db: 'test1' user: 'root' host: 'localhost' (Got an error reading communication packets)

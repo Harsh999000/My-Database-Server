@@ -1,0 +1,205 @@
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+		    41 Quit	
+250727  1:xxx:xxx	    42 Connect	root@localhost on  using Socket
+		    42 Query	FLUSH LOGS
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+		    42 Quit	
+250727  1:xxx:xxx	    36 Query	show databases
+250727  5:xxx:xxx	    43 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    43 Query	SET NAMES utf8mb4
+		    43 Query	DESCRIBE test1.table1
+		    43 Quit	
+250727  5:xxx:xxx	    44 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    44 Query	SET NAMES utf8mb4
+		    44 Query	DESCRIBE test1.table1
+		    44 Quit	
+		    45 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    45 Query	SET NAMES utf8mb4
+		    45 Query	INSERT INTO test1.table1 (column1, column2) VALUES (1,'Data 1'), (2,'Data 2')
+		    45 Quit	
+250727  5:xxx:xxx	    36 Query	show databases
+250727  5:xxx:xxx	    36 Query	SELECT DATABASE()
+		    36 Init DB	test1
+		    36 Query	show databases
+		    36 Query	show tables
+		    36 Field List	table1 
+		    36 Field List	table2 
+250727  5:xxx:xxx	    36 Query	show tables
+250727  5:xxx:xxx	    36 Query	select column1, column2 from table1
+250727  5:xxx:xxx	    46 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    46 Query	SET NAMES utf8mb4
+		    46 Query	DESCRIBE test1.table1
+		    46 Quit	
+		    47 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    47 Query	SET NAMES utf8mb4
+		    47 Query	INSERT INTO test1.table1 (column1, column2) VALUES (3,'Data 3'), (4,'Data 4')
+		    47 Quit	
+250727  5:xxx:xxx	    48 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    48 Query	SET NAMES utf8mb4
+		    48 Query	DESCRIBE test1.table2
+		    48 Quit	
+250727  5:xxx:xxx	    49 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    49 Query	SET NAMES utf8mb4
+		    49 Query	DESCRIBE test1.table2
+		    49 Quit	
+		    50 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    50 Query	SET NAMES utf8mb4
+		    50 Query	INSERT INTO test1.table2 (column1, column2) VALUES (1,'D - 1'), (2,'D - 2')
+		    50 Quit	
+250727  5:xxx:xxx	    51 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    51 Query	SET NAMES utf8mb4
+		    51 Query	DESCRIBE test1.table2
+		    51 Quit	
+		    52 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    52 Query	SET NAMES utf8mb4
+		    52 Query	INSERT INTO test1.table2 (column1, column2) VALUES (3,'D - 3'), (4,'D - 4')
+		    52 Quit	
+250727  5:xxx:xxx	    36 Query	show column1, column2 from table2
+250727  5:xxx:xxx	    36 Query	select column1, column2 from table2
+250727  7:xxx:xxx	    53 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    53 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    53 Query	SELECT * FROM test1.table1
+		    53 Quit	
+250727  7:xxx:xxx	    54 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    54 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    54 Query	SELECT * FROM test1.table1
+		    54 Quit	
+250727  7:xxx:xxx	    55 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    55 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    55 Query	SELECT * FROM test1.table1
+		    55 Quit	
+250727  9:xxx:xxx	    56 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    56 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    56 Query	SELECT * FROM test1.table1
+		    56 Quit	
+250727  9:xxx:xxx	    57 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    57 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    57 Query	DESCRIBE test1.tabl1
+		    57 Quit	
+250727  9:xxx:xxx	    58 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    58 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    58 Query	DESCRIBE test1.table1
+		    58 Quit	
+		    59 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    59 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    59 Quit	
+250727  9:xxx:xxx	    60 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    60 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    60 Query	DESCRIBE test1.table1
+		    60 Quit	
+		    61 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    61 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    61 Quit	
+250727  9:xxx:xxx	    62 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    62 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    62 Query	DESCRIBE test1.table1
+		    62 Quit	
+		    63 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    63 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    63 Quit	
+250727  9:xxx:xxx	    64 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    64 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    64 Query	DESCRIBE test1.table1
+		    64 Quit	
+		    65 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    65 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    65 Query	DELETE FROM test1.table1 WHERE column1 = 4
+250727  9:xxx:xxx	    65 Quit	
+250727  9:xxx:xxx	    66 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    66 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    66 Query	SELECT * FROM test1.table1
+		    66 Quit	
+250727  9:xxx:xxx	    67 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    67 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    67 Query	DESCRIBE test1.table1
+		    67 Quit	
+		    68 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    68 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    68 Query	DELETE FROM test1.table1 WHERE column1 = 2
+		    68 Quit	
+250727  9:xxx:xxx	    69 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    69 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    69 Query	SELECT * FROM test1.table1
+		    69 Quit	
+250727  9:xxx:xxx	    70 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    70 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    70 Query	DELETE FROM test1.table1
+		    70 Quit	
+250727  9:xxx:xxx	    71 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    71 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    71 Query	SELECT * FROM test1.table1
+		    71 Quit	
+250727  9:xxx:xxx	    72 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    72 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    72 Query	SELECT * FROM test1.table2
+		    72 Quit	
+250727  9:xxx:xxx	    73 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    73 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    73 Query	DELETE FROM test1.table2
+		    73 Quit	
+250727  9:xxx:xxx	    74 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    74 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    74 Query	SELECT * FROM test1.table2
+		    74 Quit	
+250727  9:xxx:xxx	    75 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    75 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    75 Query	DESCRIBE test1.table1
+		    75 Quit	
+		    76 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    76 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    76 Query	INSERT INTO test1.table1 (column1, column2) VALUES (1,'D - 1'), (2,'D - 2'), (3,'D - 3'), (4,'D - 4')
+		    76 Quit	
+250727 10:xxx:xxx	    77 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    77 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    77 Query	DESCRIBE test1.table2
+		    77 Quit	
+		    78 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    78 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    78 Query	INSERT INTO test1.table2 (column1, column2) VALUES (1,'D - 1'), (2,'D - 2'), (3,'D - 3'), (4,'D - 4')
+		    78 Quit	
+250727 10:xxx:xxx	    79 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    79 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    79 Query	DESCRIBE test1.table2
+		    79 Quit	
+		    80 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    80 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    80 Query	INSERT INTO test1.table2 (column1, column2) VALUES (11,'D - 11'), (22,'D - 22'), (34,'D - 33'), (44,'D - 44')
+250727 10:xxx:xxx	    80 Quit	
+250727 10:xxx:xxx	    81 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    81 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    81 Query	DESCRIBE test1.table1
+		    81 Quit	
+		    82 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    82 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    82 Query	INSERT INTO test1.table1 (column1, column2) VALUES (14,'D - 14'), (23,'D - 23'), (32,'D - 32'), (41,'D - 41')
+250727 10:xxx:xxx	    82 Quit	
+250727 10:xxx:xxx	    83 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    83 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    83 Query	SELECT * FROM test1.table2
+		    83 Quit	
+250727 10:xxx:xxx	    84 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    84 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    84 Query	SELECT * FROM test1.table1
+		    84 Quit	
+250727 10:xxx:xxx	    85 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    85 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    85 Query	SELECT * FROM test1.table1
+		    85 Quit	
+250727 10:xxx:xxx	    86 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    86 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    86 Query	SELECT * FROM test1.table2
+		    86 Quit	
+250727 10:xxx:xxx	    87 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    87 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    87 Query	SELECT * FROM test1.table1
+		    87 Quit	
+250727 10:xxx:xxx	    88 Connect	app_user@xxx.xxx.xxx.xxx on mysql using TCP/IP
+		    88 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    88 Query	SELECT * FROM test1.table2
+		    88 Quit	
+250728  0:xxx:xxx	    89 Connect	root@localhost on  using Socket
+		    89 Query	FLUSH LOGS
