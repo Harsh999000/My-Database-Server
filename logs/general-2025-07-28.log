@@ -1,0 +1,46 @@
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+		    89 Quit	
+250728  0:xxx:xxx	    90 Connect	harsh@localhost on  using Socket
+		    90 Query	/*!40100 SET @@SQL_MODE='' */
+		    90 Query	/*!40103 SET TIME_ZONE='+00:xxx' */
+		    90 Query	/*!100100 SET @@MAX_STATEMENT_TIME=0.000000 */
+		    90 Query	/*!100100 SET WAIT_TIMEOUT=DEFAULT */
+		    90 Query	set optimizer_switch='semijoin=off'
+		    90 Query	SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IS NOT NULL GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE, TOTAL_EXTENTS, INITIAL_SIZE ORDER BY LOGFILE_GROUP_NAME
+		    90 Query	SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME
+		    90 Query	set optimizer_switch=default
+		    90 Query	SHOW DATABASES
+		    90 Init DB	mysql
+		    90 Query	SHOW CREATE DATABASE IF NOT EXISTS `mysql`
+		    90 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'general_log'
+		    90 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		    90 Query	SET SESSION character_set_results = 'binary'
+		    90 Query	show create table `general_log`
+		    90 Quit	
+250728  3:xxx:xxx	    91 Connect	root@localhost on  using Socket
+		    91 Query	select @@version_comment limit 1
+250728  3:xxx:xxx	    91 Query	show databases
+250728  3:xxx:xxx	    91 Query	select user, host from mysql.user
+250728  4:xxx:xxx	    92 Connect	root@localhost on  using Socket
+		    92 Query	select @@version_comment limit 1
+250728  5:xxx:xxx	    92 Query	SHOW VARIABLES LIKE 'port'
+250728  5:xxx:xxx	    93 Connect	app_user@localhost on mysql using TCP/IP
+		    93 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    93 Query	SHOW DATABASES
+		    93 Quit	
+250728  5:xxx:xxx	    94 Connect	app_user@localhost on mysql using TCP/IP
+		    94 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    94 Query	SHOW DATABASES
+		    94 Quit	
+250728  5:xxx:xxx	    95 Connect	app_user@localhost on mysql using TCP/IP
+		    95 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    95 Query	CREATE DATABASE test2
+		    95 Quit	
+250728  5:xxx:xxx	    96 Connect	app_user@localhost on mysql using TCP/IP
+		    96 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    96 Query	DROP DATABASE test2
+		    96 Quit	
+250729  0:xxx:xxx	    97 Connect	root@localhost on  using Socket
+		    97 Query	FLUSH LOGS

@@ -1,0 +1,2 @@
+2025-07-28  3:xxx:xxx 91 [Warning] Aborted connection 91 to db: 'unconnected' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2025-07-28  7:xxx:xxx 92 [Warning] Aborted connection 92 to db: 'unconnected' user: 'root' host: 'localhost' (Got an error reading communication packets)
