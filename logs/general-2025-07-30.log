@@ -1,0 +1,56 @@
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+		   102 Quit	
+250730  0:xxx:xxx	   103 Connect	harsh@localhost on  using Socket
+		   103 Query	/*!40100 SET @@SQL_MODE='' */
+		   103 Query	/*!40103 SET TIME_ZONE='+00:xxx' */
+		   103 Query	/*!100100 SET @@MAX_STATEMENT_TIME=0.000000 */
+		   103 Query	/*!100100 SET WAIT_TIMEOUT=DEFAULT */
+		   103 Query	set optimizer_switch='semijoin=off'
+		   103 Query	SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IS NOT NULL GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE, TOTAL_EXTENTS, INITIAL_SIZE ORDER BY LOGFILE_GROUP_NAME
+		   103 Query	SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME
+		   103 Query	set optimizer_switch=default
+		   103 Query	SHOW DATABASES
+		   103 Init DB	mysql
+		   103 Query	SHOW CREATE DATABASE IF NOT EXISTS `mysql`
+		   103 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'general_log'
+		   103 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		   103 Query	SET SESSION character_set_results = 'binary'
+		   103 Query	show create table `general_log`
+		   103 Quit	
+250730  1:xxx:xxx	   104 Connect	root@localhost on  using Socket
+		   104 Query	select @@version_comment limit 1
+250730  1:xxx:xxx	   104 Query	show databases
+250730  7:xxx:xxx	   104 Quit	
+250730 22:xxx:xxx	   105 Connect	root@localhost on  using Socket
+		   105 Query	select @@version_comment limit 1
+250730 22:xxx:xxx	   105 Query	show databases
+250730 23:xxx:xxx	   105 Query	create database dbmanager_user_db
+250730 23:xxx:xxx	   105 Query	show databases
+250730 23:xxx:xxx	   105 Query	SELECT DATABASE()
+		   105 Init DB	dbmanager_user_db
+		   105 Query	show databases
+		   105 Query	show tables
+250730 23:xxx:xxx	   105 Query	create table user_details (
+if int primary key auto_increment,
+username varchar(20) not null nuique,
+status varchar(20) not null check (status in('active', 'inactive')),
+role varchar(20) not null check (role in ('root', 'super_admin', 'admin', 'executive')),
+created_at Datetime default current_timestamp,
+last_updated_at datetime default curret_timestamp on update current_timestamp,
+created_by varchar(20) not null,
+last_updated_by varchar(20) not null,
+deleted_by varchar(20) default '-')
+250730 23:xxx:xxx	   105 Query	create table user_details ( if int primary key auto_increment, username varchar(20) not null unique, status varchar(20) not null check (status in('active', 'inactive')), role varchar(20) not null check (role in ('root', 'super_admin', 'admin', 'executive')), created_at Datetime default current_timestamp, last_updated_at datetime default curret_timestamp on update current_timestamp, created_by varchar(20) not null, last_updated_by varchar(20) not null, deleted_by varchar(20) default '-')
+250730 23:xxx:xxx	   105 Query	create table user_details ( id int primary key auto_increment, username varchar(20) not null unique, status varchar(20) not null check (status in('active', 'inactive')), role varchar(20) not null check (role in ('root', 'super_admin', 'admin', 'executive')), created_at Datetime default current_timestamp, last_updated_at datetime default curret_timestamp on update current_timestamp, created_by varchar(20) not null, last_updated_by varchar(20) not null, deleted_by varchar(20) default '-')
+250730 23:xxx:xxx	   105 Query	create table user_details ( id int primary key auto_increment, username varchar(20) not null unique, status varchar(20) not null check (status in('active', 'inactive')), role varchar(20) not null check (role in ('root', 'super_admin', 'admin', 'executive')), created_at Datetime default current_timestamp, last_updated_at datetime default current_timestamp on update current_timestamp, created_by varchar(20) not null, last_updated_by varchar(20) not null, deleted_by varchar(20) default '-')
+250730 23:xxx:xxx	   105 Query	create database dbmanager_user_secret_db
+250730 23:xxx:xxx	   105 Query	show tables
+250730 23:xxx:xxx	   105 Query	show databases
+250730 23:xxx:xxx	   105 Query	SELECT DATABASE()
+		   105 Init DB	dbmanager_user_secret_db
+		   105 Query	show databases
+		   105 Query	show tables
+250731  0:xxx:xxx	   106 Connect	root@localhost on  using Socket
+		   106 Query	FLUSH LOGS
