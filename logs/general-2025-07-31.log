@@ -1,0 +1,254 @@
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+		   106 Quit	
+250731  0:xxx:xxx	   105 Query	create table user_secret (
+username varchar(20) primary key,
+password_hash varchar(500) not null,
+created_at datetime default current_timestamp,
+last_updated_at datetime default current_timestamp on update current_timestamp)
+250731  0:xxx:xxx	   105 Query	create database dbmanager_access_db
+250731  0:xxx:xxx	   105 Query	show databases
+250731  0:xxx:xxx	   107 Connect	harsh@localhost on  using Socket
+		   107 Query	/*!40100 SET @@SQL_MODE='' */
+		   107 Query	/*!40103 SET TIME_ZONE='+00:xxx' */
+		   107 Query	/*!100100 SET @@MAX_STATEMENT_TIME=0.000000 */
+		   107 Query	/*!100100 SET WAIT_TIMEOUT=DEFAULT */
+		   107 Query	set optimizer_switch='semijoin=off'
+		   107 Query	SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IS NOT NULL GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE, TOTAL_EXTENTS, INITIAL_SIZE ORDER BY LOGFILE_GROUP_NAME
+		   107 Query	SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME
+		   107 Query	set optimizer_switch=default
+		   107 Query	SHOW DATABASES
+		   107 Init DB	dbmanager_access_db
+		   107 Query	SHOW CREATE DATABASE IF NOT EXISTS `dbmanager_access_db`
+		   107 Query	SHOW FULL TABLES
+		   107 Query	UNLOCK TABLES
+		   107 Init DB	dbmanager_user_db
+		   107 Query	SHOW CREATE DATABASE IF NOT EXISTS `dbmanager_user_db`
+		   107 Query	SHOW FULL TABLES
+		   107 Query	LOCK TABLES `user_details` READ /*!32311 LOCAL */
+		   107 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'user_details'
+		   107 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		   107 Query	SET SESSION character_set_results = 'binary'
+		   107 Query	show create table `user_details`
+		   107 Query	SET SESSION character_set_results = 'utf8mb4'
+		   107 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='user_details' order by ordinal_position
+		   107 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `username`, `status`, `role`, `created_at`, `last_updated_at`, `created_by`, `last_updated_by`, `deleted_by` FROM `user_details`
+		   107 Query	SET SESSION character_set_results = 'binary'
+		   107 Init DB	dbmanager_user_db
+		   107 Query	select @@collation_database
+		   107 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'user_details'
+		   107 Query	SET SESSION character_set_results = 'utf8mb4'
+		   107 Query	UNLOCK TABLES
+		   107 Init DB	dbmanager_user_secret_db
+		   107 Query	SHOW CREATE DATABASE IF NOT EXISTS `dbmanager_user_secret_db`
+		   107 Query	SHOW FULL TABLES
+		   107 Query	LOCK TABLES `user_secret` READ /*!32311 LOCAL */
+		   107 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'user_secret'
+		   107 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		   107 Query	SET SESSION character_set_results = 'binary'
+		   107 Query	show create table `user_secret`
+		   107 Query	SET SESSION character_set_results = 'utf8mb4'
+		   107 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='user_secret' order by ordinal_position
+		   107 Query	SELECT /*!40001 SQL_NO_CACHE */ `username`, `password_hash`, `created_at`, `last_updated_at` FROM `user_secret`
+		   107 Query	SET SESSION character_set_results = 'binary'
+		   107 Init DB	dbmanager_user_secret_db
+		   107 Query	select @@collation_database
+		   107 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'user_secret'
+		   107 Query	SET SESSION character_set_results = 'utf8mb4'
+		   107 Query	UNLOCK TABLES
+		   107 Init DB	mysql
+		   107 Query	SHOW CREATE DATABASE IF NOT EXISTS `mysql`
+		   107 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'general_log'
+		   107 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		   107 Query	SET SESSION character_set_results = 'binary'
+		   107 Query	show create table `general_log`
+		   107 Quit	
+250731  0:xxx:xxx	   105 Query	show databases
+250731  0:xxx:xxx	   105 Query	SELECT DATABASE()
+		   105 Init DB	dbmanager_access_db
+		   105 Query	show databases
+		   105 Query	show tables
+250731  0:xxx:xxx	   105 Quit	
+250731  0:xxx:xxx	   108 Connect	root@localhost on  using Socket
+		   108 Query	select @@version_comment limit 1
+250731  0:xxx:xxx	   108 Query	show databases
+250731  0:xxx:xxx	   108 Query	SELECT DATABASE()
+		   108 Init DB	dbmanager_access_db
+		   108 Query	show databases
+		   108 Query	show tables
+250731  1:xxx:xxx	   108 Query	CREATE TABLE virtual_db_map (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    virtual_db_name VARCHAR(200) NOT NULL, 
+    username VARCHAR(20) NOT NULL, 
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    last_updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_by VARCHAR(20) NOT NULL, 
+    last_updated_by VARCHAR(20) NOT NULL, 
+    deleted_by VARCHAR(20) DEFAULT '-', 
+    status VARCHAR(20) DEFAULT 'active',
+
+    CONSTRAINT uq_virtual_db UNIQUE (username, virtual_db_name),
+    CONSTRAINT fk_virtual_db_user FOREIGN KEY (username)
+        REFERENCES dbmanager_user_db.user_details(username)
+        ON DELETE CASCADE
+)
+250731  1:xxx:xxx	   108 Query	SELECT DATABASE()
+		   108 Init DB	dbmanager_access_db
+		   108 Query	CREATE TABLE virtual_table_map (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    virtual_table_name VARCHAR(300) NOT NULL,
+    virtual_db_name VARCHAR(200) NOT NULL,
+    username VARCHAR(20) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    last_updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_by VARCHAR(20) NOT NULL,
+    last_updated_by VARCHAR(20) NOT NULL,
+    deleted_by VARCHAR(20) DEFAULT '-',
+    status VARCHAR(20) DEFAULT 'active',
+
+    CONSTRAINT uq_virtual_table UNIQUE (username, virtual_db_name, virtual_table_name),
+    CONSTRAINT fk_virtual_table_user FOREIGN KEY (username)
+        REFERENCES dbmanager_user_db.user_details(username)
+        ON DELETE CASCADE,
+    CONSTRAINT fk_virtual_table_vdb FOREIGN KEY (username, virtual_db_name)
+        REFERENCES virtual_db_map(username, virtual_db_name)
+        ON DELETE CASCADE
+)
+250731  1:xxx:xxx	   108 Query	CREATE TABLE table_access_map (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    
+    grantee VARCHAR(20) NOT NULL,
+    owner VARCHAR(20) NOT NULL,
+    virtual_db_name VARCHAR(200) NOT NULL,
+    virtual_table_name VARCHAR(300) NOT NULL,
+
+    access_scope VARCHAR(20) NOT NULL CHECK (access_scope IN ('read', 'write', 'read_write')),
+    
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_by VARCHAR(20) NOT NULL,
+    status VARCHAR(20) DEFAULT 'active',
+
+    CONSTRAINT uq_table_access UNIQUE (grantee, owner, virtual_db_name, virtual_table_name),
+    
+    CONSTRAINT fk_grantee_user FOREIGN KEY (grantee)
+        REFERENCES dbmanager_user_db.user_details(username)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_owner_user FOREIGN KEY (owner)
+        REFERENCES dbmanager_user_db.user_details(username)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_table_ref FOREIGN KEY (owner, virtual_db_name, virtual_table_name)
+        REFERENCES dbmanager_access_db.virtual_table_map(username, virtual_db_name, virtual_table_name)
+        ON DELETE CASCADE
+)
+250731  1:xxx:xxx	   108 Query	INSERT INTO user_details (username, status, role, created_by, last_updated_by)
+VALUES 
+('root',       'active', 'root',         'root', 'root'),
+('harsh',      'active', 'super_admin',  'root', 'root'),
+('testadmin1', 'active', 'admin',        'root', 'root'),
+('testadmin2', 'active', 'admin',        'root', 'root'),
+('testexec1',  'active', 'executive',    'root', 'root'),
+('testexec2',  'active', 'executive',    'root', 'root')
+250731  1:xxx:xxx	   108 Query	show tables
+250731  1:xxx:xxx	   108 Query	SELECT DATABASE()
+		   108 Init DB	dbmanager_user_db
+		   108 Query	show databases
+		   108 Query	show tables
+		   108 Field List	user_details 
+250731  1:xxx:xxx	   108 Query	INSERT INTO user_details (username, status, role, created_by, last_updated_by) VALUES  ('root',       'active', 'root',         'root', 'root'), ('harsh',      'active', 'super_admin',  'root', 'root'), ('testadmin1', 'active', 'admin',        'root', 'root'), ('testadmin2', 'active', 'admin',        'root', 'root'), ('testexec1',  'active', 'executive',    'root', 'root'), ('testexec2',  'active', 'executive',    'root', 'root')
+250731  1:xxx:xxx	   108 Query	SELECT DATABASE()
+		   108 Init DB	dbmanager_user_secret_db
+		   108 Query	show databases
+		   108 Query	show tables
+		   108 Field List	user_secret 
+250731  1:xxx:xxx	   108 Query	SELECT DATABASE()
+		   108 Init DB	dbmanager_user_secret_db
+250731  1:xxx:xxx	   108 Query	INSERT INTO user_secret (username, password_hash)
+VALUES 
+('root',       '$2a$10$root_hash_here'),
+('harsh',      '$2a$10$harsh_hash_here'),
+('testadmin1', '$2a$10$admin1_hash_here'),
+('testadmin2', '$2a$10$admin2_hash_here'),
+('testexec1',  '$2a$10$exec1_hash_here'),
+('testexec2',  '$2a$10$exec2_hash_here')
+250731  1:xxx:xxx	   108 Query	SELECT DATABASE()
+		   108 Init DB	dbmanager_access_db
+		   108 Query	show databases
+		   108 Query	show tables
+		   108 Field List	table_access_map 
+		   108 Field List	virtual_db_map 
+		   108 Field List	virtual_table_map 
+250731  1:xxx:xxx	   108 Query	INSERT INTO virtual_db_map (
+  virtual_db_name, username, created_by, last_updated_by
+) VALUES
+('db1', 'testadmin1', 'testadmin1', 'testadmin1'),
+('db2', 'testadmin2', 'testadmin2', 'testadmin2')
+250731  1:xxx:xxx	   108 Query	INSERT INTO virtual_table_map (
+  virtual_table_name, virtual_db_name, username,
+  created_by, last_updated_by
+) VALUES
+('table1', 'db1', 'testadmin1', 'testadmin1', 'testadmin1'),
+('table2', 'db2', 'testadmin2', 'testadmin2', 'testadmin2')
+250731  1:xxx:xxx	   108 Query	SELECT DATABASE()
+250731  1:xxx:xxx	   108 Query	show databases
+250731  1:xxx:xxx	   108 Query	create database dbmanager_user_data
+250731  1:xxx:xxx	   108 Query	SELECT DATABASE()
+		   108 Init DB	dbmanager_user_data
+		   108 Query	show databases
+		   108 Query	show tables
+250731  1:xxx:xxx	   108 Query	CREATE TABLE testadmin1_db1_table1 (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50)
+)
+250731  1:xxx:xxx	   108 Query	CREATE TABLE testadmin2_db2_table2 (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50)
+)
+250731  1:xxx:xxx	   108 Query	INSERT INTO testadmin1_db1_table1 (name) VALUES ('Row from admin1')
+250731  1:xxx:xxx	   108 Query	INSERT INTO testadmin2_db2_table2 (name) VALUES ('Row from admin2')
+250731  1:xxx:xxx	   108 Query	SELECT DATABASE()
+		   108 Init DB	dbmanager_access_db
+		   108 Query	show databases
+		   108 Query	show tables
+		   108 Field List	table_access_map 
+		   108 Field List	virtual_db_map 
+		   108 Field List	virtual_table_map 
+250731  1:xxx:xxx	   108 Query	INSERT INTO table_access_map (
+  grantee, owner, virtual_db_name, virtual_table_name, access_scope, created_by
+) VALUES
+('testexec1', 'testadmin1', 'db1', 'table1', 'read_write', 'testadmin1'),
+('testexec2', 'testadmin2', 'db2', 'table2', 'read_write', 'testadmin2')
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+250731 19:xxx:xxx	     3 Connect	root@localhost on  using Socket
+		     3 Query	select @@version_comment limit 1
+250731 19:xxx:xxx	     3 Query	show databases
+250731 20:xxx:xxx	     4 Connect	app_user@localhost on mysql using TCP/IP
+		     4 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		     4 Query	SHOW DATABASES
+		     4 Quit	
+250731 20:xxx:xxx	     5 Connect	app_user@localhost on mysql using TCP/IP
+		     5 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		     5 Query	SHOW DATABASES
+		     5 Quit	
+250731 20:xxx:xxx	     6 Connect	app_user@localhost on mysql using TCP/IP
+		     6 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		     6 Query	SELECT USER, HOST FROM mysql.user
+		     6 Quit	
+250731 20:xxx:xxx	     7 Connect	app_user@localhost on mysql using TCP/IP
+		     7 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		     7 Query	SHOW TABLES FROM test1
+		     7 Quit	
+250731 20:xxx:xxx	     8 Connect	app_user@localhost on mysql using TCP/IP
+		     8 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		     8 Query	SHOW DATABASES
+		     8 Quit	
+250731 20:xxx:xxx	     9 Connect	app_user@localhost on mysql using TCP/IP
+		     9 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		     9 Query	SELECT USER, HOST FROM mysql.user
+		     9 Quit	
+250801  0:xxx:xxx	    10 Connect	root@localhost on  using Socket
+		    10 Query	FLUSH LOGS
