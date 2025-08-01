@@ -1,0 +1,680 @@
+/db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+		    10 Quit	
+250801  0:xxx:xxx	    11 Connect	harsh@localhost on  using Socket
+		    11 Query	/*!40100 SET @@SQL_MODE='' */
+		    11 Query	/*!40103 SET TIME_ZONE='+00:xxx' */
+		    11 Query	/*!100100 SET @@MAX_STATEMENT_TIME=0.000000 */
+		    11 Query	/*!100100 SET WAIT_TIMEOUT=DEFAULT */
+		    11 Query	set optimizer_switch='semijoin=off'
+		    11 Query	SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IS NOT NULL GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE, TOTAL_EXTENTS, INITIAL_SIZE ORDER BY LOGFILE_GROUP_NAME
+		    11 Query	SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME
+		    11 Query	set optimizer_switch=default
+		    11 Query	SHOW DATABASES
+		    11 Init DB	dbmanager_access_db
+		    11 Query	SHOW CREATE DATABASE IF NOT EXISTS `dbmanager_access_db`
+		    11 Query	SHOW FULL TABLES
+		    11 Query	LOCK TABLES `table_access_map` READ /*!32311 LOCAL */,`virtual_db_map` READ /*!32311 LOCAL */,`virtual_table_map` READ /*!32311 LOCAL */
+		    11 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'table_access_map'
+		    11 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		    11 Query	SET SESSION character_set_results = 'binary'
+		    11 Query	show create table `table_access_map`
+		    11 Query	SET SESSION character_set_results = 'utf8mb4'
+		    11 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='table_access_map' order by ordinal_position
+		    11 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `grantee`, `owner`, `virtual_db_name`, `virtual_table_name`, `access_scope`, `created_at`, `created_by`, `status` FROM `table_access_map`
+		    11 Query	SET SESSION character_set_results = 'binary'
+		    11 Init DB	dbmanager_access_db
+		    11 Query	select @@collation_database
+		    11 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'table_access_map'
+		    11 Query	SET SESSION character_set_results = 'utf8mb4'
+		    11 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'virtual_db_map'
+		    11 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		    11 Query	SET SESSION character_set_results = 'binary'
+		    11 Query	show create table `virtual_db_map`
+		    11 Query	SET SESSION character_set_results = 'utf8mb4'
+		    11 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='virtual_db_map' order by ordinal_position
+		    11 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `virtual_db_name`, `username`, `created_at`, `last_updated_at`, `created_by`, `last_updated_by`, `deleted_by`, `status` FROM `virtual_db_map`
+		    11 Query	SET SESSION character_set_results = 'binary'
+		    11 Init DB	dbmanager_access_db
+		    11 Query	select @@collation_database
+		    11 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'virtual_db_map'
+		    11 Query	SET SESSION character_set_results = 'utf8mb4'
+		    11 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'virtual_table_map'
+		    11 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		    11 Query	SET SESSION character_set_results = 'binary'
+		    11 Query	show create table `virtual_table_map`
+		    11 Query	SET SESSION character_set_results = 'utf8mb4'
+		    11 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='virtual_table_map' order by ordinal_position
+		    11 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `virtual_table_name`, `virtual_db_name`, `username`, `created_at`, `last_updated_at`, `created_by`, `last_updated_by`, `deleted_by`, `status` FROM `virtual_table_map`
+		    11 Query	SET SESSION character_set_results = 'binary'
+		    11 Init DB	dbmanager_access_db
+		    11 Query	select @@collation_database
+		    11 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'virtual_table_map'
+		    11 Query	SET SESSION character_set_results = 'utf8mb4'
+		    11 Query	UNLOCK TABLES
+		    11 Init DB	dbmanager_user_data
+		    11 Query	SHOW CREATE DATABASE IF NOT EXISTS `dbmanager_user_data`
+		    11 Query	SHOW FULL TABLES
+		    11 Query	LOCK TABLES `testadmin1_db1_table1` READ /*!32311 LOCAL */,`testadmin2_db2_table2` READ /*!32311 LOCAL */
+		    11 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'testadmin1_db1_table1'
+		    11 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		    11 Query	SET SESSION character_set_results = 'binary'
+		    11 Query	show create table `testadmin1_db1_table1`
+		    11 Query	SET SESSION character_set_results = 'utf8mb4'
+		    11 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='testadmin1_db1_table1' order by ordinal_position
+		    11 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `name` FROM `testadmin1_db1_table1`
+		    11 Query	SET SESSION character_set_results = 'binary'
+		    11 Init DB	dbmanager_user_data
+		    11 Query	select @@collation_database
+		    11 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'testadmin1_db1_table1'
+		    11 Query	SET SESSION character_set_results = 'utf8mb4'
+		    11 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'testadmin2_db2_table2'
+		    11 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		    11 Query	SET SESSION character_set_results = 'binary'
+		    11 Query	show create table `testadmin2_db2_table2`
+		    11 Query	SET SESSION character_set_results = 'utf8mb4'
+		    11 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='testadmin2_db2_table2' order by ordinal_position
+		    11 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `name` FROM `testadmin2_db2_table2`
+		    11 Query	SET SESSION character_set_results = 'binary'
+		    11 Init DB	dbmanager_user_data
+		    11 Query	select @@collation_database
+		    11 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'testadmin2_db2_table2'
+		    11 Query	SET SESSION character_set_results = 'utf8mb4'
+		    11 Query	UNLOCK TABLES
+		    11 Init DB	dbmanager_user_db
+		    11 Query	SHOW CREATE DATABASE IF NOT EXISTS `dbmanager_user_db`
+		    11 Query	SHOW FULL TABLES
+		    11 Query	LOCK TABLES `user_details` READ /*!32311 LOCAL */
+		    11 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'user_details'
+		    11 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		    11 Query	SET SESSION character_set_results = 'binary'
+		    11 Query	show create table `user_details`
+		    11 Query	SET SESSION character_set_results = 'utf8mb4'
+		    11 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='user_details' order by ordinal_position
+		    11 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `username`, `status`, `role`, `created_at`, `last_updated_at`, `created_by`, `last_updated_by`, `deleted_by` FROM `user_details`
+		    11 Query	SET SESSION character_set_results = 'binary'
+		    11 Init DB	dbmanager_user_db
+		    11 Query	select @@collation_database
+		    11 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'user_details'
+		    11 Query	SET SESSION character_set_results = 'utf8mb4'
+		    11 Query	UNLOCK TABLES
+		    11 Init DB	dbmanager_user_secret_db
+		    11 Query	SHOW CREATE DATABASE IF NOT EXISTS `dbmanager_user_secret_db`
+		    11 Query	SHOW FULL TABLES
+		    11 Query	LOCK TABLES `user_secret` READ /*!32311 LOCAL */
+		    11 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'user_secret'
+		    11 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		    11 Query	SET SESSION character_set_results = 'binary'
+		    11 Query	show create table `user_secret`
+		    11 Query	SET SESSION character_set_results = 'utf8mb4'
+		    11 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='user_secret' order by ordinal_position
+		    11 Query	SELECT /*!40001 SQL_NO_CACHE */ `username`, `password_hash`, `created_at`, `last_updated_at` FROM `user_secret`
+		    11 Query	SET SESSION character_set_results = 'binary'
+		    11 Init DB	dbmanager_user_secret_db
+		    11 Query	select @@collation_database
+		    11 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'user_secret'
+		    11 Query	SET SESSION character_set_results = 'utf8mb4'
+		    11 Query	UNLOCK TABLES
+		    11 Init DB	mysql
+		    11 Query	SHOW CREATE DATABASE IF NOT EXISTS `mysql`
+		    11 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'general_log'
+		    11 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		    11 Query	SET SESSION character_set_results = 'binary'
+		    11 Query	show create table `general_log`
+		    11 Quit	
+250801  2:xxx:xxx	     3 Query	show databases
+250801  2:xxx:xxx	    12 Connect	app_user@localhost on mysql using TCP/IP
+		    12 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    12 Query	SHOW DATABASES
+		    12 Quit	
+250801  4:xxx:xxx	     3 Query	SELECT DATABASE()
+		     3 Init DB	dbmanager_user_secret_db
+		     3 Query	show databases
+		     3 Query	show tables
+		     3 Field List	user_secret 
+250801  4:xxx:xxx	     3 Query	SELECT * FROM user_secret WHERE username = 'harsh'
+250801  4:xxx:xxx	     3 Query	INSERT INTO user_secret (username, password_hash)
+VALUES (
+  'harsh',
+  '$2a$10$Gmq3LFfBSY0zvxTJNuX7eu7fMGnvz8QiBl.QpH6tfaxSoPnaOXAKS'
+)
+ON DUPLICATE KEY UPDATE password_hash = VALUES(password_hash)
+250801  4:xxx:xxx	     3 Query	select username from user_secret
+250801  4:xxx:xxx	     3 Query	select * from user_secret where username = 'harsh'
+250801  4:xxx:xxx	     3 Query	UPDATE user_secret
+SET password_hash = '$2a$10$Gmq3LFfBSY0zvxTJNuX7eu7fMGnvz8QiBl.QpH6tfaxSoPnaOXAKS'
+WHERE username = 'root'
+250801  4:xxx:xxx	     3 Query	show username from user_secret
+250801  4:xxx:xxx	     3 Query	select username from user_secret
+250801  4:xxx:xxx	     3 Query	UPDATE user_secret
+SET password_hash = '$2a$10$FlqvtMGlPfv6q1VJE5Wur.agQSrM56SP8KBwLqejMqUItXcgQGw5W'
+WHERE username = 'testadmin1'
+250801  4:xxx:xxx	     3 Query	UPDATE user_secret
+SET password_hash = '$2a$10$nxfC.W7pCKzMpGynDpZC3OBt9cEoK/SV0/fBSr1DjwnVG9iNSOKr6'
+WHERE username = 'testadmin2'
+250801  4:xxx:xxx	     3 Query	UPDATE user_secret
+SET password_hash = '$2a$10$yzHdSIA8yGppKswScj5Qhu0DudG9c8qTRUsOeevY0ypHgrZGorZoO'
+WHERE username = 'testexec2'
+250801  4:xxx:xxx	     3 Query	UPDATE user_secret
+SET password_hash = '$2a$10$xYd5PTcXRhFUv1I7ndTIGucGGlU5B7lEeuKKFP/lXQftzPy/6ck9.'
+WHERE username = 'testexec1'
+250801  4:xxx:xxx	     3 Query	select username, password_hash from user_secret
+250801  6:xxx:xxx	     3 Query	show databases
+250801  6:xxx:xxx	     3 Query	select user, host from mysql.user
+250801  6:xxx:xxx	    13 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    13 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    13 Query	SELECT @@session.tx_isolation
+		    13 Quit	
+250801  6:xxx:xxx	    14 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    14 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    14 Query	SELECT @@session.tx_isolation
+		    14 Query	SELECT @@character_set_database, @@sql_mode
+		    14 Query	select @@lower_case_table_names
+		    15 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    15 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    16 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    16 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    17 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    17 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    18 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    18 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    19 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    19 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+250801  6:xxx:xxx	    20 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    20 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    21 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    21 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    22 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    22 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    23 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    23 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+250801  7:xxx:xxx	    14 Query	SELECT us.password_hash, ud.role FROM user_secret us JOIN user_details ud ON us.username = ud.username WHERE us.username = 'root' AND ud.status = 'active'
+250801  7:xxx:xxx	    14 Quit	
+		    15 Quit	
+		    16 Quit	
+		    17 Quit	
+		    18 Quit	
+		    19 Quit	
+		    20 Quit	
+		    21 Quit	
+		    22 Quit	
+		    23 Quit	
+250801  7:xxx:xxx	    24 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    24 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    24 Query	SELECT @@session.tx_isolation
+		    24 Query	SELECT @@character_set_database, @@sql_mode
+		    24 Query	select @@lower_case_table_names
+		    25 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    25 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    26 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    26 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    27 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    27 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    28 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    28 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    29 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    29 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+250801  7:xxx:xxx	    30 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    30 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    31 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    31 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    32 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    32 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    33 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    33 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+250801  7:xxx:xxx	    24 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN user_details ud ON us.username = ud.username WHERE us.username = 'root' AND ud.status = 'active'
+250801  7:xxx:xxx	    24 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN user_details ud ON us.username = ud.username WHERE us.username = 'root' AND ud.status = 'active'
+250801  7:xxx:xxx	    24 Quit	
+		    25 Quit	
+		    26 Quit	
+		    27 Quit	
+		    28 Quit	
+		    29 Quit	
+		    30 Quit	
+		    31 Quit	
+		    32 Quit	
+		    33 Quit	
+250801  7:xxx:xxx	    34 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    34 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    34 Query	SELECT @@session.tx_isolation
+		    34 Query	SELECT @@character_set_database, @@sql_mode
+		    34 Query	select @@lower_case_table_names
+		    35 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    35 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    36 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250801  7:xxx:xxx	    36 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    37 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    37 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    38 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    38 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    39 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    39 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    40 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    40 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    41 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    41 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    42 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    42 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    43 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    43 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+250801  7:xxx:xxx	    34 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'root' AND ud.status = 'active'
+250801  7:xxx:xxx	    34 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'harsh' AND ud.status = 'active'
+250801  7:xxx:xxx	     3 Query	select user from user_secret
+250801  7:xxx:xxx	     3 Query	select username from user_secret
+250801  7:xxx:xxx	    34 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'testadmin1' AND ud.status = 'active'
+250801  7:xxx:xxx	    34 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'testexec1' AND ud.status = 'active'
+250801  7:xxx:xxx	    34 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'harsh' AND ud.status = 'active'
+250801  7:xxx:xxx	    34 Quit	
+		    35 Quit	
+		    36 Quit	
+		    37 Quit	
+		    38 Quit	
+		    39 Quit	
+		    40 Quit	
+		    41 Quit	
+250801  7:xxx:xxx	    43 Quit	
+		    42 Quit	
+250801  7:xxx:xxx	     3 Query	show databases
+250801  7:xxx:xxx	     3 Query	create database dbmanager_audit_db
+250801  7:xxx:xxx	     3 Query	SELECT DATABASE()
+		     3 Init DB	dbmanager_audit_db
+		     3 Query	show databases
+		     3 Query	show tables
+250801  7:xxx:xxx	     3 Query	CREATE TABLE login_audit_log (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(20) NOT NULL,
+    status VARCHAR(10) NOT NULL, 
+    reason VARCHAR(100) NOT NULL,
+    ip_address VARCHAR(45),
+    user_agent TEXT,
+    token_issued TEXT,
+    status_code INT NOT NULL,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_by VARCHAR(20) DEFAULT 'system'
+)
+250801  8:xxx:xxx	     3 Query	CREATE TABLE signup_audit_log (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(20) NOT NULL,
+    status VARCHAR(10) NOT NULL,          
+    reason VARCHAR(100) NOT NULL,         
+    ip_address VARCHAR(45),               
+    user_agent TEXT,
+    status_code INT NOT NULL,             
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_by VARCHAR(20) DEFAULT 'system'
+)
+250801  8:xxx:xxx	    44 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    44 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    44 Query	SELECT @@session.tx_isolation
+		    44 Query	SELECT @@character_set_database, @@sql_mode
+		    44 Query	select @@lower_case_table_names
+		    45 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    45 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    46 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    46 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+250801  8:xxx:xxx	    47 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    47 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    48 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    48 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    49 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    49 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    50 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    50 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    51 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    51 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    52 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    52 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    53 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    53 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+250801  8:xxx:xxx	    44 Query	SELECT COUNT(*) FROM dbmanager_user_db.user_details WHERE username = 'testadmin3'
+		    44 Query	SELECT COUNT(*) FROM dbmanager_user_data.virtual_db_map WHERE username = 'testadmin3' AND virtual_db_name = 'testdb'
+		    44 Query	set autocommit=0
+		    44 Query	INSERT INTO dbmanager_user_db.user_details (username, status, role, created_by, last_updated_by, deleted_by) VALUES ('testadmin3', 'active', 'admin', 'signup', 'signup', '-')
+		    44 Query	INSERT INTO dbmanager_user_secret_db.user_secret (username, password_hash) VALUES ('testadmin3', '$2a$10$k5uO9q7HjpTRX.Eto7aRw.4xDizWDIV2Y/chd6mt9FJRqnZw2ayS2')
+		    44 Query	INSERT INTO dbmanager_user_data.virtual_db_map (virtual_db_name, username, created_by, last_updated_by, deleted_by, status) VALUES ('testdb', 'testadmin3', 'signup', 'signup', '-', 'active')
+		    44 Query	ROLLBACK
+		    44 Query	set autocommit=1
+		    44 Query	INSERT INTO dbmanager_audit_db.signup_audit_log (username, status, reason, ip_address, user_agent, status_code, created_by) VALUES ('testadmin3', 'failure', 'internal server error', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.44.1', 500, 'system')
+250801  8:xxx:xxx	     3 Query	show databases
+250801  8:xxx:xxx	     3 Query	SELECT DATABASE()
+		     3 Init DB	dbmanager_access_db
+		     3 Query	show databases
+		     3 Query	show tables
+		     3 Field List	table_access_map 
+		     3 Field List	virtual_db_map 
+		     3 Field List	virtual_table_map 
+250801  8:xxx:xxx	     3 Query	show tables
+250801  8:xxx:xxx	    44 Query	SELECT COUNT(*) FROM dbmanager_user_db.user_details WHERE username = 'testadmin3'
+		    44 Query	SELECT COUNT(*) FROM dbmanager_user_data.virtual_db_map WHERE username = 'testadmin3' AND virtual_db_name = 'testdb'
+		    44 Query	set autocommit=0
+		    44 Query	INSERT INTO dbmanager_user_db.user_details (username, status, role, created_by, last_updated_by, deleted_by) VALUES ('testadmin3', 'active', 'admin', 'signup', 'signup', '-')
+		    44 Query	INSERT INTO dbmanager_user_secret_db.user_secret (username, password_hash) VALUES ('testadmin3', '$2a$10$iKNHLi5Niaqnh3dJTUEOB.W3.biNf7hygA9k7odGwPIFBO3.DHLoy')
+		    44 Query	INSERT INTO dbmanager_user_data.virtual_db_map (virtual_db_name, username, created_by, last_updated_by, deleted_by, status) VALUES ('testdb', 'testadmin3', 'signup', 'signup', '-', 'active')
+		    44 Query	ROLLBACK
+		    44 Query	set autocommit=1
+		    44 Query	INSERT INTO dbmanager_audit_db.signup_audit_log (username, status, reason, ip_address, user_agent, status_code, created_by) VALUES ('testadmin3', 'failure', 'internal server error', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.44.1', 500, 'system')
+250801  8:xxx:xxx	    44 Quit	
+		    45 Quit	
+		    46 Quit	
+		    47 Quit	
+		    48 Quit	
+		    49 Quit	
+		    50 Quit	
+		    51 Quit	
+		    52 Quit	
+		    53 Quit	
+250801  8:xxx:xxx	    54 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    54 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    54 Query	SELECT @@session.tx_isolation
+		    54 Query	SELECT @@character_set_database, @@sql_mode
+		    54 Query	select @@lower_case_table_names
+		    55 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    55 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    56 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    56 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    57 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    57 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    58 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    58 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    59 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    59 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    60 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    60 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    61 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    61 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    62 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    62 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    63 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    63 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+250801  8:xxx:xxx	    54 Query	SELECT COUNT(*) FROM dbmanager_user_db.user_details WHERE username = 'testadmin3'
+		    54 Query	SELECT COUNT(*) FROM dbmanager_user_data.virtual_db_map WHERE username = 'testadmin3' AND virtual_db_name = 'testdb'
+		    54 Query	set autocommit=0
+		    54 Query	INSERT INTO dbmanager_user_db.user_details (username, status, role, created_by, last_updated_by, deleted_by) VALUES ('testadmin3', 'active', 'admin', 'signup', 'signup', '-')
+		    54 Query	INSERT INTO dbmanager_user_secret_db.user_secret (username, password_hash) VALUES ('testadmin3', '$2a$10$m1gOmrJnf3hxynXx3Rl59esmjVbr3XyIXclKm4Alix5O7g5VcxR1q')
+		    54 Query	INSERT INTO dbmanager_access_db.virtual_db_map (virtual_db_name, username, created_by, last_updated_by, deleted_by, status) VALUES ('testdb', 'testadmin3', 'signup', 'signup', '-', 'active')
+		    54 Query	COMMIT
+		    55 Query	INSERT INTO dbmanager_audit_db.signup_audit_log (username, status, reason, ip_address, user_agent, status_code, created_by) VALUES ('testadmin3', 'success', 'signup success', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.44.1', 200, 'system')
+		    54 Query	set autocommit=1
+250801  8:xxx:xxx	    54 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'testadmin3' AND ud.status = 'active'
+		    55 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('testadmin3', 'success', 'login success', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.44.1', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW4zIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU0MDE2ODI0LCJleHAiOjE3NTQxMDMyMjR9.z3z9QBbGeofeCRg4aLZb52ohrLBMPfdbtxwfqbZU5I8', 200, 'system')
+250801  8:xxx:xxx	     3 Query	SELECT DATABASE()
+		     3 Init DB	dbmanager_audit_db
+		     3 Query	show databases
+		     3 Query	show tables
+		     3 Field List	login_audit_log 
+		     3 Field List	signup_audit_log 
+250801  8:xxx:xxx	     3 Query	SELECT * FROM signup_audit_log ORDER BY timestamp
+250801  8:xxx:xxx	     3 Query	SELECT * FROM login_audit_log ORDER BY timestamp
+250801  8:xxx:xxx	    54 Quit	
+		    55 Quit	
+		    56 Quit	
+		    57 Quit	
+		    58 Quit	
+		    59 Quit	
+		    60 Quit	
+		    61 Quit	
+		    62 Quit	
+		    63 Quit	
+250801 10:xxx:xxx	     3 Quit	
+250801 13:xxx:xxx	    64 Connect	root@localhost on  using Socket
+		    64 Query	select @@version_comment limit 1
+250801 13:xxx:xxx	    64 Query	show databases
+250801 14:xxx:xxx	    64 Query	SELECT DATABASE()
+		    64 Init DB	dbmanager_audit_db
+		    64 Query	show databases
+		    64 Query	show tables
+		    64 Field List	login_audit_log 
+		    64 Field List	signup_audit_log 
+250801 14:xxx:xxx	    64 Query	CREATE TABLE session_audit_log (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(20) NOT NULL,
+    token_hash VARCHAR(100) NOT NULL,
+    status VARCHAR(20) DEFAULT 'logged_out',
+    logout_reason VARCHAR(200) DEFAULT 'manual',
+    ip_address VARCHAR(100),
+    user_agent TEXT,
+    logout_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_by VARCHAR(20) NOT NULL
+)
+250801 14:xxx:xxx	    65 Connect	app_user@xxx.xxx.xxx.xxx on ${DB_NAME} using TCP/IP
+250801 14:xxx:xxx	    66 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    66 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    66 Query	SELECT @@session.tx_isolation
+		    66 Query	SELECT @@character_set_database, @@sql_mode
+		    66 Query	select @@lower_case_table_names
+		    67 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    67 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    68 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    68 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    69 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    69 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    70 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    70 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    71 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    71 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    72 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    72 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    73 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    73 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    74 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    74 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    75 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    75 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+250801 14:xxx:xxx	    66 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'testadmin3' AND ud.status = 'active'
+		    67 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('testadmin3', 'success', 'login success', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW4zIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU0MDQwNTE4LCJleHAiOjE3NTQxMjY5MTh9.hYAE_nr9dXQwdiG0gqHtGYiY1OiS1FxwoXiEybS_-FM', 200, 'system')
+250801 15:xxx:xxx	    66 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, logout_reason, ip_address, user_agent, created_by) VALUES ('testadmin3', '1a19fe1094710c7e004a3bb382967d285aa0a451c99017e7ec9cd3f2637591fe', 'logged_out', 'manual', '0:0:0:0:0:0:0:1', 'curl/7.79.1', 'testadmin3')
+250801 15:xxx:xxx	    64 Query	SELECT 
+  id, username, status, logout_reason, ip_address, user_agent, logout_time 
+FROM 
+  session_audit_log
+ORDER BY 
+  logout_time DESC
+250801 15:xxx:xxx	    64 Query	ALTER TABLE session_audit_log 
+ADD COLUMN login_time DATETIME 
+AFTER user_agent
+250801 15:xxx:xxx	    64 Query	DELETE FROM session_audit_log WHERE id = 1
+250801 15:xxx:xxx	    64 Query	SELECT * FROM session_audit_log ORDER BY logout_time DESC
+250801 15:xxx:xxx	    66 Quit	
+		    67 Quit	
+		    68 Quit	
+		    69 Quit	
+		    70 Quit	
+		    71 Quit	
+		    72 Quit	
+		    73 Quit	
+		    74 Quit	
+		    75 Quit	
+250801 15:xxx:xxx	    76 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    76 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    76 Query	SELECT @@session.tx_isolation
+		    76 Query	SELECT @@character_set_database, @@sql_mode
+		    76 Query	select @@lower_case_table_names
+		    77 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    77 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    78 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    78 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    79 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    79 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    80 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    80 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+250801 15:xxx:xxx	    81 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    81 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    82 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    82 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    83 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    83 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    84 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    84 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    85 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    85 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+250801 15:xxx:xxx	    76 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'testadmin3' AND ud.status = 'active'
+		    77 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, created_by) VALUES ('testadmin3', '69af27f813ab001f383b4191de86136c20a4a8277746a98a4f8b68b2c633716e', 'active', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', NOW(), 'testadmin3')
+		    77 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('testadmin3', 'success', 'login success', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW4zIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU0MDQxODQxLCJleHAiOjE3NTQxMjgyNDF9.qk87i1cglut3-aOLPZhuecW0TrN3-jQfciJ-Ebi3Zhs', 200, 'system')
+250801 15:xxx:xxx	    64 Query	SELECT * FROM session_audit_log ORDER BY logout_time DESC
+250801 15:xxx:xxx	    76 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'testadmin3' WHERE username = 'testadmin3' AND token_hash = '69af27f813ab001f383b4191de86136c20a4a8277746a98a4f8b68b2c633716e' AND status = 'active'
+250801 15:xxx:xxx	    64 Query	SELECT * FROM session_audit_log ORDER BY logout_time DESC
+250801 15:xxx:xxx	    64 Query	MariaDB [dbmanager_audit_db]> SELECT * FROM session_audit_log ORDER BY logout_time DESC
+		    64 Query	+----+------------+------------------------------------------------------------------+--------+---------------+-----------------+-----------------------+---------------------+---------------------+------------+
+| id | username   | token_hash                                                       | status | logout_reason | ip_address      | user_agent            | login_time          | logout_time         | created_by |
++----+------------+------------------------------------------------------------------+--------+---------------+-----------------+-----------------------+---------------------+---------------------+------------+
+|  2 | testadmin3 | 69af27f813ab001f383b4191de86136c20a4a8277746a98a4f8b68b2c633716e | active | manual        | 0:0:0:0:0:0:0:1 | PostmanRuntime/7.45.0 | 2025-08-01 15:xxx:xxx | 2025-08-01 15:xxx:xxx | testadmin3 |
++----+------------+------------------------------------------------------------------+--------+---------------+-----------------+-----------------------+---------------------+---------------------+------------+
+1 row in set (0.001 sec)
+
+MariaDB [dbmanager_audit_db]> SELECT * FROM session_audit_log ORDER BY logout_time DESC
+250801 15:xxx:xxx	    64 Query	+----+------------+------------------------------------------------------------------+------------+---------------+-----------------+-------------+---------------------+---------------------+------------+
+| id | username   | token_hash                                                       | status     | logout_reason | ip_address      | user_agent  | login_time          | logout_time         | created_by |
++----+------------+------------------------------------------------------------------+------------+---------------+-----------------+-------------+---------------------+---------------------+------------+
+|  2 | testadmin3 | 69af27f813ab001f383b4191de86136c20a4a8277746a98a4f8b68b2c633716e | logged_out | manual        | 0:0:0:0:0:0:0:1 | curl/7.79.1 | 2025-08-01 15:xxx:xxx | 2025-08-01 15:xxx:xxx | testadmin3 |
++----+------------+------------------------------------------------------------------+------------+---------------+-----------------+-------------+---------------------+---------------------+------------+
+250801 15:xxx:xxx	    64 Query	ALTER TABLE session_audit_log 
+MODIFY logout_reason VARCHAR(200) DEFAULT '-'
+250801 15:xxx:xxx	    64 Query	DELETE FROM session_audit_log WHERE id = 1
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    64 Query	DELETE FROM session_audit_log WHERE id = 2
+250801 15:xxx:xxx	    76 Quit	
+		    77 Quit	
+		    78 Quit	
+		    79 Quit	
+		    80 Quit	
+		    81 Quit	
+		    82 Quit	
+		    83 Quit	
+		    84 Quit	
+		    85 Quit	
+250801 15:xxx:xxx	    86 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    86 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    86 Query	SELECT @@session.tx_isolation
+		    86 Query	SELECT @@character_set_database, @@sql_mode
+		    86 Query	select @@lower_case_table_names
+		    87 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    87 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    88 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    88 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    89 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    89 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    90 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    90 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+250801 15:xxx:xxx	    91 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    91 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    92 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    92 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    93 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    93 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    94 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    94 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    95 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    95 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+250801 15:xxx:xxx	    86 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'testadmin3' AND ud.status = 'active'
+		    87 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('testadmin3', '518c13cf36c45bc8f0540eb69d0d9813fe6a8698277c882027263689f0a63c87', 'active', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', NOW(), '-', NULL, 'testadmin3')
+		    87 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('testadmin3', 'success', 'login success', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW4zIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU0MDQyMzgxLCJleHAiOjE3NTQxMjg3ODF9.zZu8pQbtSoYHNKTTmFCw4cOaLjAYq7FFAggzD_T3sKo', 200, 'system')
+250801 15:xxx:xxx	    86 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'testadmin3' WHERE username = 'testadmin3' AND token_hash = '518c13cf36c45bc8f0540eb69d0d9813fe6a8698277c882027263689f0a63c87' AND status = 'active'
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    86 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'testadmin3' AND ud.status = 'active'
+		    87 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('testadmin3', '6c33bb70c4d749ff0fb57d1c52bc5e38c6136ed31c512816d56ff59d41772807', 'active', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', NOW(), '-', NULL, 'testadmin3')
+		    87 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('testadmin3', 'success', 'login success', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW4zIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU0MDQyNDI5LCJleHAiOjE3NTQxMjg4Mjl9.8ThRkzaYwHzRWEwWQNBsg4DOBXmtpONNRiwSm-8BSIE', 200, 'system')
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log where id = 2
+250801 15:xxx:xxx	    86 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'testadmin3' WHERE username = 'testadmin3' AND token_hash = '6c33bb70c4d749ff0fb57d1c52bc5e38c6136ed31c512816d56ff59d41772807' AND status = 'active'
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log where id = 2
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    86 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'testadmin3' AND ud.status = 'active'
+		    87 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('testadmin3', '655fda2ce7fdb4888ae0b71c3bc2f909cb1527808d489c0478fa4f1bd18815bb', 'active', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', NOW(), '-', NULL, 'testadmin3')
+		    87 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('testadmin3', 'success', 'login success', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW4zIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU0MDQyNDkzLCJleHAiOjE3NTQxMjg4OTN9.o5dA7yh6W81TVCxpOF2Dj5vPZM3BQ747yaR1tmnxuiE', 200, 'system')
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    86 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'testadmin3' WHERE username = 'testadmin3' AND token_hash = '6c33bb70c4d749ff0fb57d1c52bc5e38c6136ed31c512816d56ff59d41772807' AND status = 'active'
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    86 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'testadmin3' WHERE username = 'testadmin3' AND token_hash = '6c33bb70c4d749ff0fb57d1c52bc5e38c6136ed31c512816d56ff59d41772807' AND status = 'active'
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    86 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'testadmin3' WHERE username = 'testadmin3' AND token_hash = '6c33bb70c4d749ff0fb57d1c52bc5e38c6136ed31c512816d56ff59d41772807' AND status = 'active'
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    86 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'testadmin3' AND ud.status = 'active'
+		    87 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('testadmin3', '5b3a2304051765848814682faa039f3dee08ed3fc7191c8d233121048c5e51f5', 'active', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', NOW(), '-', NULL, 'testadmin3')
+250801 15:xxx:xxx	    87 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('testadmin3', 'success', 'login success', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW4zIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU0MDQyNTgwLCJleHAiOjE3NTQxMjg5ODB9.FcaHCY1mZfgQqc9HX-Hnf31J3GVYEHSZLSAX2GeBdYg', 200, 'system')
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    86 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'testadmin3' WHERE username = 'testadmin3' AND token_hash = '5b3a2304051765848814682faa039f3dee08ed3fc7191c8d233121048c5e51f5' AND status = 'active'
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log where id = 3
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log where id = 4
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log where id = 5
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log where id = 6
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log where id = 5
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log where id = 5
+250801 15:xxx:xxx	    64 Query	DELETE FROM session_audit_log WHERE id = 5
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    86 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'testadmin3' WHERE username = 'testadmin3' AND token_hash = '5b3a2304051765848814682faa039f3dee08ed3fc7191c8d233121048c5e51f5' AND status = 'active'
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    86 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'testadmin3' WHERE username = 'testadmin3' AND token_hash = '5b3a2304051765848814682faa039f3dee08ed3fc7191c8d233121048c5e51f5' AND status = 'active'
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    64 Query	delete from session_audit_log
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    86 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'testadmin3' AND ud.status = 'active'
+		    87 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('testadmin3', '5493bef65ff1c8683af6be8e4f09ea296989b637c06796b2d1b3d49ed126fd66', 'active', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', NOW(), '-', NULL, 'testadmin3')
+		    87 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('testadmin3', 'success', 'login success', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW4zIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU0MDQzMTAzLCJleHAiOjE3NTQxMjk1MDN9.0it6F0PkXYWynQIfc8hxJ7XYeYv0dxr-b8jmdCJ-0Sg', 200, 'system')
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    86 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'testadmin3' WHERE username = 'testadmin3' AND token_hash = '5493bef65ff1c8683af6be8e4f09ea296989b637c06796b2d1b3d49ed126fd66' AND status = 'active'
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    86 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'testadmin3' WHERE username = 'testadmin3' AND token_hash = '5493bef65ff1c8683af6be8e4f09ea296989b637c06796b2d1b3d49ed126fd66' AND status = 'active'
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    86 Quit	
+		    87 Quit	
+		    88 Quit	
+		    89 Quit	
+		    90 Quit	
+		    91 Quit	
+		    92 Quit	
+		    93 Quit	
+		    94 Quit	
+		    95 Quit	
+250801 15:xxx:xxx	    64 Query	delete from session_audit_log
+250801 15:xxx:xxx	    64 Query	delete from session_audit_log
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    96 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    96 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    96 Query	SELECT @@session.tx_isolation
+		    96 Query	SELECT @@character_set_database, @@sql_mode
+		    96 Query	select @@lower_case_table_names
+		    97 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    97 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    98 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    98 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		    99 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		    99 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		   100 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   100 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		   101 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   101 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		   102 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250801 15:xxx:xxx	   102 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		   103 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   103 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		   104 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   104 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+		   105 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   105 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+250801 15:xxx:xxx	    96 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'testadmin3' AND ud.status = 'active'
+		    97 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('testadmin3', '844f4273303b59cd013296b4030fd1e82e51205406de8541b07190b97885bf01', 'active', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', NOW(), '-', NULL, 'testadmin3')
+		    97 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('testadmin3', 'success', 'login success', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW4zIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU0MDQzMTgwLCJleHAiOjE3NTQxMjk1ODB9.uRBoB0k3PImdB7k2PfDYOXW7NzDDt4-ywcB_XrPz7ww', 200, 'system')
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    96 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'testadmin3' WHERE username = 'testadmin3' AND token_hash = '844f4273303b59cd013296b4030fd1e82e51205406de8541b07190b97885bf01' AND status = 'active'
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    96 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'testadmin3' WHERE username = 'testadmin3' AND token_hash = '844f4273303b59cd013296b4030fd1e82e51205406de8541b07190b97885bf01' AND status = 'active'
+250801 15:xxx:xxx	    64 Query	select * from session_audit_log
+250801 15:xxx:xxx	    96 Quit	
+		    97 Quit	
+		    98 Quit	
+		    99 Quit	
+		   100 Quit	
+		   101 Quit	
+		   102 Quit	
+		   103 Quit	
+		   104 Quit	
+		   105 Quit	
+250801 21:xxx:xxx	   106 Connect	root@localhost on  using Socket
+		   106 Query	select @@version_comment limit 1
+250801 21:xxx:xxx	   106 Query	show databases
+250802  0:xxx:xxx	   107 Connect	root@localhost on  using Socket
+		   107 Query	FLUSH LOGS

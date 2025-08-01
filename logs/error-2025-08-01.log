@@ -1,0 +1,2 @@
+2025-08-01  6:xxx:xxx 13 [Warning] IP address 'xxx.xxx.xxx.xxx' could not be resolved: Name or service not known
+2025-08-01 17:xxx:xxx 64 [Warning] Aborted connection 64 to db: 'dbmanager_audit_db' user: 'root' host: 'localhost' (Got an error reading communication packets)
