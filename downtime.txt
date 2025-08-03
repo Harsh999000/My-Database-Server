@@ -2,6 +2,10 @@ Downtime Record:
 
 -------------------------
 Start - 23-07-2025
-END - 24-07-2025
+End - 24-07-2025
 Issue - FLUSH LOGS DID NOT WORK FROM CRON JOB
+-------------------------
+Start - 02-08-2025
+End - 
+Issue - File copy executed from cron job but the the copy fo files failed
 -------------------------

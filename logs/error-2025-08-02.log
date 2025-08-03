@@ -1,1 +1,1 @@
-2025-08-02  5:xxx:xxx 106 [Warning] Aborted connection 106 to db: 'unconnected' user: 'root' host: 'localhost' (Got timeout reading communication packets)
+2025-08-02  5:35:39 106 [Warning] Aborted connection 106 to db: 'unconnected' user: 'root' host: 'localhost' (Got timeout reading communication packets)

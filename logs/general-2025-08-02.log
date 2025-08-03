@@ -1,10 +1,10 @@
 /db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
-Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Tcp port: 3306  Unix socket: /db1/myserver/mariadb/mysql.sock
 Time		    Id Command	Argument
 		   107 Quit	
-250802  0:xxx:xxx	   108 Connect	harsh@localhost on  using Socket
+250802  0:20:01	   108 Connect	harsh@localhost on  using Socket
 		   108 Query	/*!40100 SET @@SQL_MODE='' */
-		   108 Query	/*!40103 SET TIME_ZONE='+00:xxx' */
+		   108 Query	/*!40103 SET TIME_ZONE='+00:00' */
 		   108 Query	/*!100100 SET @@MAX_STATEMENT_TIME=0.000000 */
 		   108 Query	/*!100100 SET WAIT_TIMEOUT=DEFAULT */
 		   108 Query	set optimizer_switch='semijoin=off'
@@ -164,5 +164,5 @@ Time		    Id Command	Argument
 		   108 Query	SET SESSION character_set_results = 'binary'
 		   108 Query	show create table `general_log`
 		   108 Quit	
-250803  0:xxx:xxx	   109 Connect	root@localhost on  using Socket
+250803  0:03:01	   109 Connect	root@localhost on  using Socket
 		   109 Query	FLUSH LOGS
