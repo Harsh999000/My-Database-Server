@@ -1,0 +1,2 @@
+2025-08-03 11:xxx:xxx 222 [Warning] Aborted connection 222 to db: 'dbmanager_user_db' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2025-08-03 18:xxx:xxx 111 [Warning] Aborted connection 111 to db: 'dbmanager_audit_db' user: 'root' host: 'localhost' (Got timeout reading communication packets)
