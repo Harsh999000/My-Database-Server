@@ -1,33 +1,40 @@
+# ================================================
+# Centralized Cron Job Logging to cronlog folder
+# Logs stored at: /location/mariadb/cronlog/cron-execution.log
+# ================================================
+
 # Rotate error.log at 12:01 AM
-1 0 * * * mv /location/mariadb/logs/error.log /location/mariadb/logs/error-$(date -d "yesterday" +\%F).log
+1 0 * * * echo "[Rotate error.log] $(date)" >> /location/mariadb/cronlog/cron-execution.log && mv /location/mariadb/logs/error.log /location/mariadb/logs/error-$(date -d "yesterday" +\%F).log >> /location/mariadb/cronlog/cron-execution.log 2>&1
 
 # Rotate general.log at 12:01 AM
-1 0 * * * mv /location/mariadb/logs/general.log /location/mariadb/logs/general-$(date -d "yesterday" +\%F).log
+1 0 * * * echo "[Rotate general.log] $(date)" >> /location/mariadb/cronlog/cron-execution.log && mv /location/mariadb/logs/general.log /location/mariadb/logs/general-$(date -d "yesterday" +\%F).log >> /location/mariadb/cronlog/cron-execution.log 2>&1
 
 # Create empty logs after rotation at 12:02 AM
-2 0 * * * touch /location/mariadb/logs/general.log /location/mariadb/logs/error.log
+2 0 * * * echo "[Create empty logs] $(date)" >> /location/mariadb/cronlog/cron-execution.log && touch /location/mariadb/logs/general.log /location/mariadb/logs/error.log >> /location/mariadb/cronlog/cron-execution.log 2>&1
 
-# Flush Logs so that mariadb closes and reopens the new file 12:03 AM
-# Mariadb db does not automatically reopen the new file and keep using old file handle
-3 0 * * * /location/mariadb/bin/mysql -u root -pYourPasswordHere -S /location/mariadb/mysql.sock -e "FLUSH LOGS;"
+# Flush Logs at 12:03 AM
+3 0 * * * echo "[Flush MariaDB logs] $(date)" >> /location/mariadb/cronlog/cron-execution.log && /location/mariadb/bin/mysql -u root -pHarsh0@server -S /location/mariadb/mysql.sock -e "FLUSH LOGS;" >> /location/mariadb/flush-output.log 2>&1
 
-# Keep only last 7 days of logs in MariaDB logs folder at 12:03 AM
-3 0 * * * find /location/mariadb/logs -type f -name 'startup-*.log' -mtime +7 -delete
-3 0 * * * find /location/mariadb/logs -type f -name 'general-*.log' -mtime +7 -delete
-3 0 * * * find /location/mariadb/logs -type f -name 'error-*.log' -mtime +7 -delete
+# Delete old startup logs at 12:03 AM
+3 0 * * * echo "[Delete old startup logs] $(date)" >> /location/mariadb/cronlog/cron-execution.log && find /location/mariadb/logs -type f -name 'startup-*.log' -mtime +7 -delete >> /location/mariadb/cronlog/cron-execution.log 2>&1
 
-# Move rotated logs to github/logs folder at 12:04 AM
-4 0 * * * cp /location/mariadb/logs/*-$(date -d "yesterday" +\%F).log /location/github/logs/
+# Delete old general logs at 12:03 AM
+3 0 * * * echo "[Delete old general logs] $(date)" >> /location/mariadb/cronlog/cron-execution.log && find /location/mariadb/logs -type f -name 'general-*.log' -mtime +7 -delete >> /location/mariadb/cronlog/cron-execution.log 2>&1
 
-# Mask all the ips in the logs here at 12:05 AM
-5 0 * * * /location/github/scripts/sainitize-logs.sh >/dev/null 2>&1
+# Delete old error logs at 12:03 AM
+3 0 * * * echo "[Delete old error logs] $(date)" >> /location/mariadb/cronlog/cron-execution.log && find /location/mariadb/logs -type f -name 'error-*.log' -mtime +7 -delete >> /location/mariadb/cronlog/cron-execution.log 2>&1
 
-# Push logs to github at 12:10 AM
-10 0 * * * cd /location/github && git add --ignore-removal logs/ && git commit -m "Auto-update logs: $(date '+\%Y-\%m-\%d \%H:\%M:\%S')" && git push origin main
+# Copy rotated logs to GitHub folder at 12:04 AM
+4 0 * * * echo "[Copy rotated logs to GitHub folder] $(date)" >> /location/mariadb/cronlog/cron-execution.log && cp /location/mariadb/logs/*-$(date -d "yesterday" +\%F).log /location/github/logs/ >> /location/mariadb/cronlog/cron-execution.log 2>&1
 
-# Delete all logs in github/logs folder after push at 12:15 AM
-15 0 * * * rm -f /location/github/logs/*.log
+# Sanitize logs at 12:05 AM
+5 0 * * * echo "[Sanitize logs] $(date)" >> /location/mariadb/cronlog/cron-execution.log && /location/mariadb/Custom-Scripts/sanitize-logs.sh >> /location/mariadb/cronlog/cron-execution.log 2>&1
 
-# Create Database backup at 12:20 AM
-30 1 * * * /location/mariadb/Custom-Scripts/backup-mariadb.sh >> /location/mariadb/logs/backup.log 2>&1
+# Git commit and push at 12:10 AM
+10 0 * * * echo "[Git push logs to repo] $(date)" >> /location/mariadb/cronlog/cron-execution.log && cd /location/github && git add --ignore-removal logs/ && git commit -m "Auto-update logs: $(date '+\%Y-\%m-\%d \%H:\%M:\%S')" && git push origin main >> /location/mariadb/cronlog/cron-execution.log 2>&1
 
+# Delete GitHub logs after push at 12:15 AM
+15 0 * * * echo "[Delete GitHub logs after push] $(date)" >> /location/mariadb/cronlog/cron-execution.log && rm -f /location/github/logs/*.log >> /location/mariadb/cronlog/cron-execution.log 2>&1
+
+# Create MariaDB backup at 12:20 AM
+20 0 * * * echo "[Backup database] $(date)" >> /location/mariadb/cronlog/cron-execution.log && /location/mariadb/Custom-Scripts/backup-mariadb.sh >> /location/mariadb/logs/backup.log 2>&1
