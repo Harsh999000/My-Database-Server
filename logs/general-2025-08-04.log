@@ -1,15 +1,15 @@
 /db1/myserver/mariadb/bin/mariadbd, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
-Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Tcp port: 3306  Unix socket: /db1/myserver/mariadb/mysql.sock
 Time		    Id Command	Argument
 		   297 Quit	
-250804  8:xxx:xxx	   288 Query	SELECT DATABASE()
+250804  8:35:23	   288 Query	SELECT DATABASE()
 		   288 Init DB	dbmanager_audit_db
 		   288 Query	show databases
 		   288 Query	show tables
 		   288 Field List	login_audit_log 
 		   288 Field List	session_audit_log 
 		   288 Field List	signup_audit_log 
-250804  8:xxx:xxx	   288 Query	CREATE TABLE IF NOT EXISTS api_audit_log (
+250804  8:38:50	   288 Query	CREATE TABLE IF NOT EXISTS api_audit_log (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(20) NOT NULL,
     endpoint VARCHAR(300) NOT NULL,
@@ -21,46 +21,46 @@ Time		    Id Command	Argument
     timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
     created_by VARCHAR(20) DEFAULT 'system'
 )
-250804  8:xxx:xxx	   298 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804  8:56:42	   298 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   298 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
 		   298 Query	SELECT @@session.tx_isolation
 		   298 Query	SELECT @@character_set_database, @@sql_mode
 		   298 Query	select @@lower_case_table_names
-		   299 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   299 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   299 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   300 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   300 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   300 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   301 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   301 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   301 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   302 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   302 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   302 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   303 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   303 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   303 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   304 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   304 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   304 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   305 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   305 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   305 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   306 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   306 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   306 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   307 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   307 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   307 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804  8:xxx:xxx	   298 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'root' AND ud.status = 'active'
-		   299 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('root', '5aca46d84a37c54f726fddb077098c052ea49f13d1e336b6a3ee2f553f39464f', 'active', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/xxx.xxx.xxx.xxx Safari/537.36', NOW(), '-', NULL, 'root')
-		   299 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('root', 'success', 'login success', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/xxx.xxx.xxx.xxx Safari/537.36', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyb290Iiwicm9sZSI6InJvb3QiLCJpYXQiOjE3NTQyNzgwMjMsImV4cCI6MTc1NDM2NDQyM30.ElGkGX71KivfgHzaSIPyLOBiVQzszx_0ngSMp4eT95c', 200, 'system')
-250804  8:xxx:xxx	   298 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/xxx.xxx.xxx.xxx Safari/537.36', logout_time = NOW(), created_by = 'root' WHERE username = 'root' AND token_hash = '5aca46d84a37c54f726fddb077098c052ea49f13d1e336b6a3ee2f553f39464f' AND status = 'active'
-250804  8:xxx:xxx	   298 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'harsh' AND ud.status = 'active'
-		   299 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('harsh', '3ea18cd363affdfeac5aa3f4d28da66cfa7f60226faabd532b952b0c377c355c', 'active', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/xxx.xxx.xxx.xxx Safari/537.36', NOW(), '-', NULL, 'harsh')
-		   299 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('harsh', 'success', 'login success', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/xxx.xxx.xxx.xxx Safari/537.36', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYXJzaCIsInJvbGUiOiJzdXBlcl9hZG1pbiIsImlhdCI6MTc1NDI3ODAzMiwiZXhwIjoxNzU0MzY0NDMyfQ.NVRgCmJRLzP2z5qTCfYXn9HzPADVsJ2pZ-kYt4hf25U', 200, 'system')
-250804  8:xxx:xxx	   298 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/xxx.xxx.xxx.xxx Safari/537.36', logout_time = NOW(), created_by = 'harsh' WHERE username = 'harsh' AND token_hash = '3ea18cd363affdfeac5aa3f4d28da66cfa7f60226faabd532b952b0c377c355c' AND status = 'active'
-250804  8:xxx:xxx	   298 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'root' AND ud.status = 'active'
+250804  8:57:03	   298 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'root' AND ud.status = 'active'
+		   299 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('root', '5aca46d84a37c54f726fddb077098c052ea49f13d1e336b6a3ee2f553f39464f', 'active', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', NOW(), '-', NULL, 'root')
+		   299 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('root', 'success', 'login success', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyb290Iiwicm9sZSI6InJvb3QiLCJpYXQiOjE3NTQyNzgwMjMsImV4cCI6MTc1NDM2NDQyM30.ElGkGX71KivfgHzaSIPyLOBiVQzszx_0ngSMp4eT95c', 200, 'system')
+250804  8:57:05	   298 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', logout_time = NOW(), created_by = 'root' WHERE username = 'root' AND token_hash = '5aca46d84a37c54f726fddb077098c052ea49f13d1e336b6a3ee2f553f39464f' AND status = 'active'
+250804  8:57:13	   298 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'harsh' AND ud.status = 'active'
+		   299 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('harsh', '3ea18cd363affdfeac5aa3f4d28da66cfa7f60226faabd532b952b0c377c355c', 'active', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', NOW(), '-', NULL, 'harsh')
+		   299 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('harsh', 'success', 'login success', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYXJzaCIsInJvbGUiOiJzdXBlcl9hZG1pbiIsImlhdCI6MTc1NDI3ODAzMiwiZXhwIjoxNzU0MzY0NDMyfQ.NVRgCmJRLzP2z5qTCfYXn9HzPADVsJ2pZ-kYt4hf25U', 200, 'system')
+250804  8:57:15	   298 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', logout_time = NOW(), created_by = 'harsh' WHERE username = 'harsh' AND token_hash = '3ea18cd363affdfeac5aa3f4d28da66cfa7f60226faabd532b952b0c377c355c' AND status = 'active'
+250804  8:58:32	   298 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'root' AND ud.status = 'active'
 		   299 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('root', '0a2e35ed3e37afef42309edd0ca1c81cd40e3510af2c848e689be2c50eb0b6ca', 'active', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', NOW(), '-', NULL, 'root')
 		   299 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('root', 'success', 'login success', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyb290Iiwicm9sZSI6InJvb3QiLCJpYXQiOjE3NTQyNzgxMTIsImV4cCI6MTc1NDM2NDUxMn0.FSGi4SgYajIZ0G3RzTxGaiofnY2BAbo0vBRpML6mcc8', 200, 'system')
-250804  8:xxx:xxx	   298 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'root' WHERE username = 'root' AND token_hash = '0a2e35ed3e37afef42309edd0ca1c81cd40e3510af2c848e689be2c50eb0b6ca' AND status = 'active'
-250804  8:xxx:xxx	   288 Query	SELECT * FROM dbmanager_audit_db.api_audit_log
+250804  8:59:04	   298 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'root' WHERE username = 'root' AND token_hash = '0a2e35ed3e37afef42309edd0ca1c81cd40e3510af2c848e689be2c50eb0b6ca' AND status = 'active'
+250804  8:59:22	   288 Query	SELECT * FROM dbmanager_audit_db.api_audit_log
 ORDER BY timestamp DESC
 LIMIT 5
-250804  8:xxx:xxx	   288 Query	show tables
-250804  9:xxx:xxx	   298 Quit	
+250804  8:59:40	   288 Query	show tables
+250804  9:01:27	   298 Quit	
 		   299 Quit	
 		   300 Quit	
 		   301 Quit	
@@ -70,59 +70,59 @@ LIMIT 5
 		   305 Quit	
 		   306 Quit	
 		   307 Quit	
-250804  9:xxx:xxx	   308 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804  9:02:26	   308 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   308 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
 		   308 Query	SELECT @@session.tx_isolation
 		   308 Query	SELECT @@character_set_database, @@sql_mode
 		   308 Query	select @@lower_case_table_names
-		   309 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   309 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   309 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   310 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   310 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   310 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   311 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   311 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   311 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804  9:xxx:xxx	   312 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804  9:02:27	   312 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   312 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   313 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   313 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   313 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   314 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   314 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   314 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   315 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   315 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   315 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   316 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   316 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   316 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   317 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   317 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   317 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804  9:xxx:xxx	   308 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'root' AND ud.status = 'active'
-		   309 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('root', 'a5d25b133490ece2b9d7b16bcd2f3caa2a123917deedf0abeaa37b28ca2907c3', 'active', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/xxx.xxx.xxx.xxx Safari/537.36', NOW(), '-', NULL, 'root')
-		   309 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('root', 'success', 'login success', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/xxx.xxx.xxx.xxx Safari/537.36', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyb290Iiwicm9sZSI6InJvb3QiLCJpYXQiOjE3NTQyNzgzNTMsImV4cCI6MTc1NDM2NDc1M30.NNniT0m69r0_Eu6rEex4I-WmbLFxL-ppHMk2KMPd988', 200, 'system')
-250804  9:xxx:xxx	   308 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/xxx.xxx.xxx.xxx Safari/537.36', logout_time = NOW(), created_by = 'root' WHERE username = 'root' AND token_hash = 'a5d25b133490ece2b9d7b16bcd2f3caa2a123917deedf0abeaa37b28ca2907c3' AND status = 'active'
-250804  9:xxx:xxx	   318 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_audit_db using TCP/IP
+250804  9:02:34	   308 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'root' AND ud.status = 'active'
+		   309 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('root', 'a5d25b133490ece2b9d7b16bcd2f3caa2a123917deedf0abeaa37b28ca2907c3', 'active', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', NOW(), '-', NULL, 'root')
+		   309 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('root', 'success', 'login success', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyb290Iiwicm9sZSI6InJvb3QiLCJpYXQiOjE3NTQyNzgzNTMsImV4cCI6MTc1NDM2NDc1M30.NNniT0m69r0_Eu6rEex4I-WmbLFxL-ppHMk2KMPd988', 200, 'system')
+250804  9:02:35	   308 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', logout_time = NOW(), created_by = 'root' WHERE username = 'root' AND token_hash = 'a5d25b133490ece2b9d7b16bcd2f3caa2a123917deedf0abeaa37b28ca2907c3' AND status = 'active'
+250804  9:02:36	   318 Connect	app_user@192.168.0.194 on dbmanager_audit_db using TCP/IP
 		   318 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   318 Query	INSERT INTO dbmanager_audit_db.api_audit_log (username, endpoint, method, ip_address, user_agent, source_type, status_code, created_by) VALUES ('root', '/auth/logout', 'POST', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/xxx.xxx.xxx.xxx Safari/537.36', 'web_ui', 200, 'root')
+		   318 Query	INSERT INTO dbmanager_audit_db.api_audit_log (username, endpoint, method, ip_address, user_agent, source_type, status_code, created_by) VALUES ('root', '/auth/logout', 'POST', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', 'web_ui', 200, 'root')
 		   318 Quit	
-250804  9:xxx:xxx	   308 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'harsh' AND ud.status = 'active'
-		   309 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('harsh', 'c07589501469d855706b1155054d76e3da1a063d1f7b37b1ef9492257b5d77b6', 'active', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/xxx.xxx.xxx.xxx Safari/537.36', NOW(), '-', NULL, 'harsh')
-		   309 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('harsh', 'success', 'login success', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/xxx.xxx.xxx.xxx Safari/537.36', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYXJzaCIsInJvbGUiOiJzdXBlcl9hZG1pbiIsImlhdCI6MTc1NDI3ODM2MiwiZXhwIjoxNzU0MzY0NzYyfQ.Xkrh-ydMiEXiDnZB9_NHW4nxBkqapiAXbql3xe-1WGo', 200, 'system')
-250804  9:xxx:xxx	   308 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/xxx.xxx.xxx.xxx Safari/537.36', logout_time = NOW(), created_by = 'harsh' WHERE username = 'harsh' AND token_hash = 'c07589501469d855706b1155054d76e3da1a063d1f7b37b1ef9492257b5d77b6' AND status = 'active'
-		   319 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_audit_db using TCP/IP
+250804  9:02:42	   308 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'harsh' AND ud.status = 'active'
+		   309 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('harsh', 'c07589501469d855706b1155054d76e3da1a063d1f7b37b1ef9492257b5d77b6', 'active', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', NOW(), '-', NULL, 'harsh')
+		   309 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('harsh', 'success', 'login success', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYXJzaCIsInJvbGUiOiJzdXBlcl9hZG1pbiIsImlhdCI6MTc1NDI3ODM2MiwiZXhwIjoxNzU0MzY0NzYyfQ.Xkrh-ydMiEXiDnZB9_NHW4nxBkqapiAXbql3xe-1WGo', 200, 'system')
+250804  9:02:45	   308 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', logout_time = NOW(), created_by = 'harsh' WHERE username = 'harsh' AND token_hash = 'c07589501469d855706b1155054d76e3da1a063d1f7b37b1ef9492257b5d77b6' AND status = 'active'
+		   319 Connect	app_user@192.168.0.194 on dbmanager_audit_db using TCP/IP
 		   319 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   319 Query	INSERT INTO dbmanager_audit_db.api_audit_log (username, endpoint, method, ip_address, user_agent, source_type, status_code, created_by) VALUES ('harsh', '/auth/logout', 'POST', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/xxx.xxx.xxx.xxx Safari/537.36', 'web_ui', 200, 'harsh')
+		   319 Query	INSERT INTO dbmanager_audit_db.api_audit_log (username, endpoint, method, ip_address, user_agent, source_type, status_code, created_by) VALUES ('harsh', '/auth/logout', 'POST', '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36', 'web_ui', 200, 'harsh')
 		   319 Quit	
-250804  9:xxx:xxx	   288 Query	SELECT * FROM dbmanager_audit_db.api_audit_log ORDER BY timestamp DESC
-250804  9:xxx:xxx	   288 Query	SELECT username, endpoint, created_by FROM dbmanager_audit_db.api_audit_log ORDER BY timestamp DESC
-250804  9:xxx:xxx	   288 Query	SELECT username, endpoint, user_agent, created_by FROM dbmanager_audit_db.api_audit_log ORDER BY timestamp DESC
-250804  9:xxx:xxx	   288 Query	SELECT username, endpoint, source_type, created_by FROM dbmanager_audit_db.api_audit_log ORDER BY timestamp DESC
-250804  9:xxx:xxx	   308 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'root' AND ud.status = 'active'
+250804  9:02:53	   288 Query	SELECT * FROM dbmanager_audit_db.api_audit_log ORDER BY timestamp DESC
+250804  9:03:27	   288 Query	SELECT username, endpoint, created_by FROM dbmanager_audit_db.api_audit_log ORDER BY timestamp DESC
+250804  9:03:51	   288 Query	SELECT username, endpoint, user_agent, created_by FROM dbmanager_audit_db.api_audit_log ORDER BY timestamp DESC
+250804  9:04:17	   288 Query	SELECT username, endpoint, source_type, created_by FROM dbmanager_audit_db.api_audit_log ORDER BY timestamp DESC
+250804  9:04:27	   308 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'root' AND ud.status = 'active'
 		   309 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('root', '9665faff91753d46641f05ac4b3a4ece77f2cbd0afe5eac7b6fc0b3fb51709a3', 'active', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', NOW(), '-', NULL, 'root')
 		   309 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('root', 'success', 'login success', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyb290Iiwicm9sZSI6InJvb3QiLCJpYXQiOjE3NTQyNzg0NjcsImV4cCI6MTc1NDM2NDg2N30.K1z566cYqfMgozHKWbuJD0w0FfJxjbuRcFMhuYk_D5o', 200, 'system')
-250804  9:xxx:xxx	   308 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'root' WHERE username = 'root' AND token_hash = '9665faff91753d46641f05ac4b3a4ece77f2cbd0afe5eac7b6fc0b3fb51709a3' AND status = 'active'
-		   320 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_audit_db using TCP/IP
+250804  9:04:38	   308 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'root' WHERE username = 'root' AND token_hash = '9665faff91753d46641f05ac4b3a4ece77f2cbd0afe5eac7b6fc0b3fb51709a3' AND status = 'active'
+		   320 Connect	app_user@192.168.0.194 on dbmanager_audit_db using TCP/IP
 		   320 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
 		   320 Query	INSERT INTO dbmanager_audit_db.api_audit_log (username, endpoint, method, ip_address, user_agent, source_type, status_code, created_by) VALUES ('root', '/auth/logout', 'POST', '0:0:0:0:0:0:0:1', 'curl/7.79.1', 'curl_script', 200, 'root')
 		   320 Quit	
-250804  9:xxx:xxx	   288 Query	SELECT username, endpoint, source_type, created_by FROM dbmanager_audit_db.api_audit_log ORDER BY timestamp DESC
-250804  9:xxx:xxx	   308 Quit	
+250804  9:04:42	   288 Query	SELECT username, endpoint, source_type, created_by FROM dbmanager_audit_db.api_audit_log ORDER BY timestamp DESC
+250804  9:05:04	   308 Quit	
 		   309 Quit	
 		   310 Quit	
 		   311 Quit	
@@ -132,287 +132,287 @@ LIMIT 5
 		   315 Quit	
 		   316 Quit	
 		   317 Quit	
-250804  9:xxx:xxx	   321 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804  9:40:08	   321 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   321 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
 		   321 Query	SELECT @@session.tx_isolation
 		   321 Query	SELECT @@character_set_database, @@sql_mode
-250804  9:xxx:xxx	   321 Query	select @@lower_case_table_names
-		   322 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804  9:40:09	   321 Query	select @@lower_case_table_names
+		   322 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   322 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   323 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   323 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   323 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   324 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   324 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   324 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   325 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   325 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   325 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   326 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   326 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   326 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   327 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   327 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   327 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   328 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   328 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   328 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   329 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   329 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   329 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   330 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   330 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   330 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804  9:xxx:xxx	   331 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_audit_db using TCP/IP
+250804  9:40:14	   331 Connect	app_user@192.168.0.194 on dbmanager_audit_db using TCP/IP
 		   331 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
 		   331 Query	SELECT COUNT(*) FROM dbmanager_audit_db.api_audit_log WHERE MONTH(timestamp) = MONTH(CURDATE()) AND YEAR(timestamp) = YEAR(CURDATE())
 		   331 Quit	
-		   332 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_audit_db using TCP/IP
+		   332 Connect	app_user@192.168.0.194 on dbmanager_audit_db using TCP/IP
 		   332 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
 		   332 Query	INSERT INTO dbmanager_audit_db.api_audit_log (username, endpoint, method, ip_address, user_agent, source_type, status_code, created_by) VALUES ('root', '/api/get-api-usage', 'GET', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', 'postman', 200, 'root')
 		   332 Quit	
-250804  9:xxx:xxx	   321 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'harsh' AND ud.status = 'active'
-250804  9:xxx:xxx	   322 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('harsh', '03bc583207be958dc20634f475aff8a6d92171bbc12cc9ab0ae7c8aa0aa16a10', 'active', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', NOW(), '-', NULL, 'harsh')
+250804  9:40:40	   321 Query	SELECT us.password_hash, ud.role FROM dbmanager_user_secret_db.user_secret us JOIN dbmanager_user_db.user_details ud ON us.username = ud.username WHERE us.username = 'harsh' AND ud.status = 'active'
+250804  9:40:41	   322 Query	INSERT INTO dbmanager_audit_db.session_audit_log (username, token_hash, status, ip_address, user_agent, login_time, logout_reason, logout_time, created_by) VALUES ('harsh', '03bc583207be958dc20634f475aff8a6d92171bbc12cc9ab0ae7c8aa0aa16a10', 'active', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', NOW(), '-', NULL, 'harsh')
 		   322 Query	INSERT INTO dbmanager_audit_db.login_audit_log (username, status, reason, ip_address, user_agent, token_issued, status_code, created_by) VALUES ('harsh', 'success', 'login success', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYXJzaCIsInJvbGUiOiJzdXBlcl9hZG1pbiIsImlhdCI6MTc1NDI4MDY0MCwiZXhwIjoxNzU0MzY3MDQwfQ.NU1bdC44sHqFPKG70Ql-o6cgEwe7IjX919AKY8JTPCA', 200, 'system')
-250804  9:xxx:xxx	   321 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'harsh' WHERE username = 'harsh' AND token_hash = '03bc583207be958dc20634f475aff8a6d92171bbc12cc9ab0ae7c8aa0aa16a10' AND status = 'active'
-		   333 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_audit_db using TCP/IP
+250804  9:40:50	   321 Query	UPDATE dbmanager_audit_db.session_audit_log SET status = 'logged_out', logout_reason = 'manual', ip_address = '0:0:0:0:0:0:0:1', user_agent = 'curl/7.79.1', logout_time = NOW(), created_by = 'harsh' WHERE username = 'harsh' AND token_hash = '03bc583207be958dc20634f475aff8a6d92171bbc12cc9ab0ae7c8aa0aa16a10' AND status = 'active'
+		   333 Connect	app_user@192.168.0.194 on dbmanager_audit_db using TCP/IP
 		   333 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
 		   333 Query	INSERT INTO dbmanager_audit_db.api_audit_log (username, endpoint, method, ip_address, user_agent, source_type, status_code, created_by) VALUES ('harsh', '/auth/logout', 'POST', '0:0:0:0:0:0:0:1', 'curl/7.79.1', 'curl_script', 200, 'harsh')
 		   333 Quit	
-250804  9:xxx:xxx	   334 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_audit_db using TCP/IP
-250804  9:xxx:xxx	   334 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+250804  9:40:57	   334 Connect	app_user@192.168.0.194 on dbmanager_audit_db using TCP/IP
+250804  9:40:58	   334 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
 		   334 Query	SELECT COUNT(*) FROM dbmanager_audit_db.api_audit_log WHERE MONTH(timestamp) = MONTH(CURDATE()) AND YEAR(timestamp) = YEAR(CURDATE())
 		   334 Quit	
-		   335 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_audit_db using TCP/IP
+		   335 Connect	app_user@192.168.0.194 on dbmanager_audit_db using TCP/IP
 		   335 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
 		   335 Query	INSERT INTO dbmanager_audit_db.api_audit_log (username, endpoint, method, ip_address, user_agent, source_type, status_code, created_by) VALUES ('harsh', '/api/get-api-usage', 'GET', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', 'postman', 200, 'harsh')
 		   335 Quit	
-250804  9:xxx:xxx	   336 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_audit_db using TCP/IP
+250804  9:41:50	   336 Connect	app_user@192.168.0.194 on dbmanager_audit_db using TCP/IP
 		   336 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
 		   336 Query	SELECT COUNT(*) FROM dbmanager_audit_db.api_audit_log WHERE DATE(timestamp) = CURDATE()
 		   336 Quit	
-		   337 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_audit_db using TCP/IP
+		   337 Connect	app_user@192.168.0.194 on dbmanager_audit_db using TCP/IP
 		   337 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
 		   337 Query	INSERT INTO dbmanager_audit_db.api_audit_log (username, endpoint, method, ip_address, user_agent, source_type, status_code, created_by) VALUES ('harsh', '/api/get-api-usage', 'GET', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', 'postman', 200, 'harsh')
 		   337 Quit	
-250804  9:xxx:xxx	   338 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_audit_db using TCP/IP
+250804  9:42:10	   338 Connect	app_user@192.168.0.194 on dbmanager_audit_db using TCP/IP
 		   338 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
 		   338 Query	SELECT COUNT(*) FROM dbmanager_audit_db.api_audit_log WHERE MONTH(timestamp) = MONTH(CURDATE()) AND YEAR(timestamp) = YEAR(CURDATE())
 		   338 Quit	
-		   339 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_audit_db using TCP/IP
+		   339 Connect	app_user@192.168.0.194 on dbmanager_audit_db using TCP/IP
 		   339 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
 		   339 Query	INSERT INTO dbmanager_audit_db.api_audit_log (username, endpoint, method, ip_address, user_agent, source_type, status_code, created_by) VALUES ('harsh', '/api/get-api-usage', 'GET', '0:0:0:0:0:0:0:1', 'PostmanRuntime/7.45.0', 'postman', 200, 'harsh')
 		   339 Quit	
-250804 11:xxx:xxx	   330 Quit	
+250804 11:07:32	   330 Quit	
 		   328 Quit	
 		   322 Quit	
 		   325 Quit	
 		   323 Quit	
 		   329 Quit	
-		   340 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   340 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   326 Quit	
 		   324 Quit	
 		   340 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
 		   327 Quit	
 		   321 Quit	
-		   341 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   341 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   341 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   342 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   342 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   342 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   343 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   343 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   343 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   344 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   344 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   344 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   345 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   345 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   345 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   346 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   346 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   346 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   347 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:07:33	   347 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   347 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   348 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   348 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   348 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-		   349 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+		   349 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   349 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   341 Quit	
-		   350 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:30:14	   341 Quit	
+		   350 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   350 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   346 Quit	
-		   351 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:30:16	   346 Quit	
+		   351 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   351 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   349 Quit	
-		   352 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:30:17	   349 Quit	
+		   352 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   352 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   344 Quit	
-		   353 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:30:51	   344 Quit	
+		   353 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   353 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   340 Quit	
-		   354 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:31:23	   340 Quit	
+		   354 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   354 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   345 Quit	
-		   355 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:32:21	   345 Quit	
+		   355 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   355 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   347 Quit	
-		   356 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:32:47	   347 Quit	
+		   356 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   356 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   343 Quit	
-		   357 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:36:15	   343 Quit	
+		   357 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   357 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   348 Quit	
-		   358 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:36:45	   348 Quit	
+		   358 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   358 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   342 Quit	
-		   359 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:37:30	   342 Quit	
+		   359 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   359 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   354 Quit	
-		   360 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:54:22	   354 Quit	
+		   360 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   360 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   351 Quit	
-		   361 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:55:59	   351 Quit	
+		   361 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   361 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   356 Quit	
-		   362 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:56:17	   356 Quit	
+		   362 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   362 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   352 Quit	
-		   363 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:56:53	   352 Quit	
+		   363 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   363 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 11:xxx:xxx	   350 Quit	
-		   364 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 11:57:43	   350 Quit	
+		   364 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   364 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   355 Quit	
-		   365 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:00:10	   355 Quit	
+		   365 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   365 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   353 Quit	
-		   366 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:00:13	   353 Quit	
+		   366 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   366 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   357 Quit	
-		   367 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:01:10	   357 Quit	
+		   367 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   367 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   358 Quit	
-		   368 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:04:24	   358 Quit	
+		   368 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   368 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   359 Quit	
-		   369 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:06:26	   359 Quit	
+		   369 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   369 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   360 Quit	
-		   370 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:18:36	   360 Quit	
+		   370 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   370 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   362 Quit	
-		   371 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:18:47	   362 Quit	
+		   371 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   371 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   363 Quit	
-		   372 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:20:39	   363 Quit	
+		   372 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   372 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   364 Quit	
-		   373 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:21:27	   364 Quit	
+		   373 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   373 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   361 Quit	
-		   374 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:23:45	   361 Quit	
+		   374 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   374 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   365 Quit	
-		   375 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:25:11	   365 Quit	
+		   375 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   375 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   367 Quit	
-		   376 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:27:35	   367 Quit	
+		   376 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   376 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   366 Quit	
-		   377 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:29:44	   366 Quit	
+		   377 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   377 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   368 Quit	
-		   378 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:30:03	   368 Quit	
+		   378 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   378 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   369 Quit	
-		   379 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:32:21	   369 Quit	
+		   379 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   379 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   371 Quit	
-		   380 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:44:17	   371 Quit	
+		   380 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   380 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   372 Quit	
-		   381 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:44:51	   372 Quit	
+		   381 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   381 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   370 Quit	
-		   382 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:46:10	   370 Quit	
+		   382 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   382 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   375 Quit	
-		   383 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:48:24	   375 Quit	
+		   383 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   383 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   373 Quit	
-		   384 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:50:39	   373 Quit	
+		   384 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   384 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   374 Quit	
-		   385 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:52:12	   374 Quit	
+		   385 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   385 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   376 Quit	
-		   386 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:57:11	   376 Quit	
+		   386 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   386 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   378 Quit	
-		   387 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:57:44	   378 Quit	
+		   387 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   387 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 12:xxx:xxx	   377 Quit	
-		   388 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 12:58:16	   377 Quit	
+		   388 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   388 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   379 Quit	
-		   389 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:01:39	   379 Quit	
+		   389 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   389 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   383 Quit	
-		   390 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:11:25	   383 Quit	
+		   390 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   390 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   381 Quit	
-		   391 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:12:36	   381 Quit	
+		   391 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   391 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   380 Quit	
-		   392 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:13:26	   380 Quit	
+		   392 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   392 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   382 Quit	
-		   393 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:13:58	   382 Quit	
+		   393 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   393 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   385 Quit	
-		   394 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:15:08	   385 Quit	
+		   394 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   394 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   384 Quit	
-		   395 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:18:25	   384 Quit	
+		   395 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   395 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   388 Quit	
-		   396 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:21:05	   388 Quit	
+		   396 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   396 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   386 Quit	
-		   397 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:24:08	   386 Quit	
+		   397 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   397 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   387 Quit	
-		   398 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:24:13	   387 Quit	
+		   398 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   398 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   389 Quit	
-		   399 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:24:33	   389 Quit	
+		   399 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   399 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   390 Quit	
-		   400 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:37:10	   390 Quit	
+		   400 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   400 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   393 Quit	
-		   401 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:37:36	   393 Quit	
+		   401 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   401 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   392 Quit	
-		   402 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:38:50	   392 Quit	
+		   402 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   402 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   391 Quit	
-		   403 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:42:15	   391 Quit	
+		   403 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   403 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   395 Quit	
-		   404 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:42:21	   395 Quit	
+		   404 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   404 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   394 Quit	
-		   405 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:43:38	   394 Quit	
+		   405 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   405 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   397 Quit	
-		   406 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:47:30	   397 Quit	
+		   406 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   406 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   396 Quit	
-		   407 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:48:28	   396 Quit	
+		   407 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   407 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   399 Quit	
-		   408 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:48:29	   399 Quit	
+		   408 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   408 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 13:xxx:xxx	   398 Quit	
-		   409 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 13:49:04	   398 Quit	
+		   409 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   409 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 14:xxx:xxx	   401 Quit	
-		   410 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 14:01:23	   401 Quit	
+		   410 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   410 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 14:xxx:xxx	   402 Quit	
-		   411 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 14:05:53	   402 Quit	
+		   411 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   411 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250804 14:xxx:xxx	   400 Quit	
-		   412 Connect	app_user@xxx.xxx.xxx.xxx on dbmanager_user_data using TCP/IP
+250804 14:06:00	   400 Quit	
+		   412 Connect	app_user@192.168.0.194 on dbmanager_user_data using TCP/IP
 		   412 Query	set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
-250805  0:xxx:xxx	   413 Connect	root@localhost on  using Socket
+250805  0:03:01	   413 Connect	root@localhost on  using Socket
 		   413 Query	FLUSH LOGS
