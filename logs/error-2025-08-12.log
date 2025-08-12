@@ -1,0 +1,23 @@
+2025-08-12 20:xxx:xxx 0 [Note] Starting MariaDB 10.11.6-MariaDB-log source revision fecd78b83785d5ae96f2c6ff340375be803cd299 as process 1079
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: Compressed tables use zlib 1.3
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: Number of transaction pools: 1
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: Using Linux native AIO
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: Completed initialization of buffer pool
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: File system buffers for log disabled (block size=4096 bytes)
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: Starting crash recovery from checkpoint LSN=56008
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: End of log at LSN=285144
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: To recover: 61 pages
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: 128 rollback segments are active.
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: log sequence number 285144; transaction id 560
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: Loading buffer pool(s) from /db1/myserver/mariadb/data/ib_buffer_pool
+2025-08-12 20:xxx:xxx 0 [Note] Plugin 'FEEDBACK' is disabled.
+2025-08-12 20:xxx:xxx 0 [Note] InnoDB: Buffer pool(s) load completed at 250812 20:xxx:xxx
+2025-08-12 20:xxx:xxx 0 [Note] Server socket created on IP: 'xxx.xxx.xxx.xxx'.
+2025-08-12 20:xxx:xxx 0 [Note] /db1/myserver/mariadb/bin/mysqld: ready for connections.
+Version: '10.11.6-MariaDB-log'  socket: '/db1/myserver/mariadb/mysql.sock'  port xxx  MariaDB Server
+2025-08-12 20:xxx:xxx 3 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
