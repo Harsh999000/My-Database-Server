@@ -1,0 +1,181 @@
+/db1/myserver/mariadb/bin/mysqld, Version: 10.11.6-MariaDB-log (MariaDB Server). started with:
+Tcp port xxx  Unix socket: /db1/myserver/mariadb/mysql.sock
+Time		    Id Command	Argument
+		     5 Quit	
+250813  0:xxx:xxx	     4 Quit	
+250813  0:xxx:xxx	     6 Connect	harsh@localhost on  using Socket
+		     6 Query	/*!40100 SET @@SQL_MODE='' */
+		     6 Query	/*!40103 SET TIME_ZONE='+00:xxx' */
+		     6 Query	/*!100100 SET @@MAX_STATEMENT_TIME=0.000000 */
+		     6 Query	/*!100100 SET WAIT_TIMEOUT=DEFAULT */
+		     6 Query	set optimizer_switch='semijoin=off'
+		     6 Query	SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IS NOT NULL GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE, TOTAL_EXTENTS, INITIAL_SIZE ORDER BY LOGFILE_GROUP_NAME
+		     6 Query	SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME
+		     6 Query	set optimizer_switch=default
+		     6 Query	SHOW DATABASES
+		     6 Init DB	dbmanager_access_db
+		     6 Query	SHOW CREATE DATABASE IF NOT EXISTS `dbmanager_access_db`
+		     6 Query	SHOW FULL TABLES
+		     6 Query	LOCK TABLES `table_access_map` READ /*!32311 LOCAL */,`virtual_db_map` READ /*!32311 LOCAL */,`virtual_table_map` READ /*!32311 LOCAL */
+		     6 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'table_access_map'
+		     6 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Query	show create table `table_access_map`
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='table_access_map' order by ordinal_position
+		     6 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `grantee`, `owner`, `virtual_db_name`, `virtual_table_name`, `access_scope`, `created_at`, `created_by`, `status` FROM `table_access_map`
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Init DB	dbmanager_access_db
+		     6 Query	select @@collation_database
+		     6 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'table_access_map'
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'virtual_db_map'
+		     6 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Query	show create table `virtual_db_map`
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='virtual_db_map' order by ordinal_position
+		     6 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `virtual_db_name`, `username`, `created_at`, `last_updated_at`, `created_by`, `last_updated_by`, `deleted_by`, `status` FROM `virtual_db_map`
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Init DB	dbmanager_access_db
+		     6 Query	select @@collation_database
+		     6 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'virtual_db_map'
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'virtual_table_map'
+		     6 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Query	show create table `virtual_table_map`
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='virtual_table_map' order by ordinal_position
+		     6 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `virtual_table_name`, `virtual_db_name`, `username`, `created_at`, `last_updated_at`, `created_by`, `last_updated_by`, `deleted_by`, `status` FROM `virtual_table_map`
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Init DB	dbmanager_access_db
+		     6 Query	select @@collation_database
+		     6 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'virtual_table_map'
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	UNLOCK TABLES
+		     6 Init DB	dbmanager_audit_db
+		     6 Query	SHOW CREATE DATABASE IF NOT EXISTS `dbmanager_audit_db`
+		     6 Query	SHOW FULL TABLES
+		     6 Query	LOCK TABLES `api_audit_log` READ /*!32311 LOCAL */,`login_audit_log` READ /*!32311 LOCAL */,`session_audit_log` READ /*!32311 LOCAL */,`signup_audit_log` READ /*!32311 LOCAL */
+		     6 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'api_audit_log'
+		     6 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Query	show create table `api_audit_log`
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='api_audit_log' order by ordinal_position
+		     6 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `username`, `endpoint`, `method`, `ip_address`, `user_agent`, `source_type`, `status_code`, `timestamp`, `created_by` FROM `api_audit_log`
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Init DB	dbmanager_audit_db
+		     6 Query	select @@collation_database
+		     6 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'api_audit_log'
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'login_audit_log'
+		     6 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Query	show create table `login_audit_log`
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='login_audit_log' order by ordinal_position
+		     6 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `username`, `status`, `reason`, `ip_address`, `user_agent`, `token_issued`, `status_code`, `timestamp`, `created_by` FROM `login_audit_log`
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Init DB	dbmanager_audit_db
+		     6 Query	select @@collation_database
+		     6 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'login_audit_log'
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'session_audit_log'
+		     6 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Query	show create table `session_audit_log`
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='session_audit_log' order by ordinal_position
+		     6 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `username`, `token_hash`, `status`, `logout_reason`, `ip_address`, `user_agent`, `login_time`, `logout_time`, `created_by` FROM `session_audit_log`
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Init DB	dbmanager_audit_db
+		     6 Query	select @@collation_database
+		     6 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'session_audit_log'
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'signup_audit_log'
+		     6 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Query	show create table `signup_audit_log`
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='signup_audit_log' order by ordinal_position
+		     6 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `username`, `status`, `reason`, `ip_address`, `user_agent`, `status_code`, `timestamp`, `created_by` FROM `signup_audit_log`
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Init DB	dbmanager_audit_db
+		     6 Query	select @@collation_database
+		     6 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'signup_audit_log'
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	UNLOCK TABLES
+		     6 Init DB	dbmanager_user_data
+		     6 Query	SHOW CREATE DATABASE IF NOT EXISTS `dbmanager_user_data`
+		     6 Query	SHOW FULL TABLES
+		     6 Query	LOCK TABLES `testadmin1_db1_table1` READ /*!32311 LOCAL */,`testadmin2_db2_table2` READ /*!32311 LOCAL */
+		     6 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'testadmin1_db1_table1'
+		     6 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Query	show create table `testadmin1_db1_table1`
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='testadmin1_db1_table1' order by ordinal_position
+		     6 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `name` FROM `testadmin1_db1_table1`
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Init DB	dbmanager_user_data
+		     6 Query	select @@collation_database
+		     6 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'testadmin1_db1_table1'
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'testadmin2_db2_table2'
+		     6 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Query	show create table `testadmin2_db2_table2`
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='testadmin2_db2_table2' order by ordinal_position
+		     6 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `name` FROM `testadmin2_db2_table2`
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Init DB	dbmanager_user_data
+		     6 Query	select @@collation_database
+		     6 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'testadmin2_db2_table2'
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	UNLOCK TABLES
+		     6 Init DB	dbmanager_user_db
+		     6 Query	SHOW CREATE DATABASE IF NOT EXISTS `dbmanager_user_db`
+		     6 Query	SHOW FULL TABLES
+		     6 Query	LOCK TABLES `user_details` READ /*!32311 LOCAL */
+		     6 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'user_details'
+		     6 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Query	show create table `user_details`
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='user_details' order by ordinal_position
+		     6 Query	SELECT /*!40001 SQL_NO_CACHE */ `id`, `username`, `status`, `role`, `created_at`, `last_updated_at`, `created_by`, `last_updated_by`, `deleted_by` FROM `user_details`
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Init DB	dbmanager_user_db
+		     6 Query	select @@collation_database
+		     6 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'user_details'
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	UNLOCK TABLES
+		     6 Init DB	dbmanager_user_secret_db
+		     6 Query	SHOW CREATE DATABASE IF NOT EXISTS `dbmanager_user_secret_db`
+		     6 Query	SHOW FULL TABLES
+		     6 Query	LOCK TABLES `user_secret` READ /*!32311 LOCAL */
+		     6 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'user_secret'
+		     6 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Query	show create table `user_secret`
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	select column_name, extra, generation_expression, data_type from information_schema.columns where table_schema=database() and table_name='user_secret' order by ordinal_position
+		     6 Query	SELECT /*!40001 SQL_NO_CACHE */ `username`, `password_hash`, `created_at`, `last_updated_at` FROM `user_secret`
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Init DB	dbmanager_user_secret_db
+		     6 Query	select @@collation_database
+		     6 Query	SELECT TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS WHERE EVENT_OBJECT_SCHEMA = DATABASE() AND EVENT_OBJECT_TABLE = 'user_secret'
+		     6 Query	SET SESSION character_set_results = 'utf8mb4'
+		     6 Query	UNLOCK TABLES
+		     6 Init DB	mysql
+		     6 Query	SHOW CREATE DATABASE IF NOT EXISTS `mysql`
+		     6 Query	SELECT engine, table_type FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = DATABASE() AND table_name = 'general_log'
+		     6 Query	SET SQL_QUOTE_SHOW_CREATE=1
+		     6 Query	SET SESSION character_set_results = 'binary'
+		     6 Query	show create table `general_log`
+		     6 Quit	
+250814  0:xxx:xxx	     7 Connect	root@localhost on  using Socket
+		     7 Query	FLUSH LOGS
